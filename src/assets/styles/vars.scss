@@ -1,0 +1,43 @@
+$font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$font-size-xxs: 10px;
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-md: 16px;
+$font-size-lg: 24px;
+
+$text-regular: (
+    font-family: $font-family-primary,
+    font-weight: $font-weight-regular,
+    font-size: $font-size-sm
+);
+
+$text-bold: (
+    font-family: $font-family-primary,
+    font-weight: $font-weight-bold,
+    font-size: $font-size-sm
+);
+
+$text-light: (
+    font-family: $font-family-primary,
+    font-weight: $font-weight-light,
+    font-size: $font-size-xs
+);
+
+$text-semibold: (
+    font-family: $font-family-primary,
+    font-weight: $font-weight-semibold,
+    font-size: $font-size-sm
+);
+
+$text-number: (
+    font-family: $font-family-primary,
+    font-weight: $font-weight-semibold,
+    font-size: $font-size-md
+);
