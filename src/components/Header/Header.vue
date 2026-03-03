@@ -35,7 +35,12 @@
                     Каталог
                     <img src="@/assets/images/catalog.svg" alt="catalog" class="catalog-button">
                 </button>
-                <input type="text" placeholder="Поиск..." class="search">
+                <div class="search-container">
+                    <input type="text" placeholder="Поиск..." class="search-input">
+                    <button class="search-btn">
+                        <img src="@/assets/images/search.svg" alt="search" class="search-icon">
+                    </button>
+                </div>
                 <div class="phone-info">
                     <div class="phone-text">
                         <a href="#" class="number">+7 (777) 490-00-91</a>
