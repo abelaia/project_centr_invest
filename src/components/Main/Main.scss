@@ -15,7 +15,7 @@
 
             .main-btn {
                 padding: 0;
-                color: #3F4E65;
+                color: $color-primary;
                 background: none;
                 border: none;
                 font-size: $font-size-sm;
@@ -23,7 +23,7 @@
                 cursor: pointer;
 
                 &:focus {
-                    color: #111111;
+                    color: $color-black;
                 }
             }
         }
@@ -36,7 +36,7 @@
 
             .header {
                 text-align: left; 
-                color: #111111;
+                color: $color-black;
                 font-size: $font-size-heading;
                 font-weight: $font-weight-medium;
             }
@@ -48,77 +48,7 @@
                 
                 .sort-text {
                     font-size: $font-size-md;
-                    color: #3F4E65;
-                }
-                
-                select {
-                    border: none;
-                    background: none;
-                    font-size: $font-size-md;
-                    font-weight: $font-weight-medium;
-                    color: #111111;
-                    appearance: none;
-                    padding-right: 20px;
-                    background-image: url('@/assets/images/arrow.svg');
-                    background-repeat: no-repeat;
-                    background-position: right center;
-                    background-size: 12px;
-                    cursor: pointer;
-                    
-                    &:focus {
-                        outline: none;
-                    }
-                }
-            }
-
-            .switch-container {
-                display: flex;
-                justify-content: flex-end;
-                margin-left: 30px;
-
-                .switch-buttons {
-                    position: relative;
-                    display: flex;
-                    width: 100px;
-                    height: 45px;
-                    background: #BCA67A;
-                    opacity: 0.2;
-                    border-radius: 30px;
-                    padding: 3px;
-
-                    .switch-btn {
-                        padding: 0;
-                        position: relative;
-                        z-index: 2;
-                        flex: 1;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        background: none;
-                        border: none;
-                        cursor: pointer;
-
-                        .icon {
-                            width: 16px;
-                            height: 16px;
-                            padding: 10px 16px 10px 16px;
-                            object-fit: contain;
-                        }
-                    }
-
-                    .active-indicator {
-                        position: absolute;
-                        top: 4px;
-                        left: 4px;
-                        bottom: 4px;
-                        width: 49px;
-                        height: 42px;
-                        background: #FFFFFF;
-                        border-radius: 27px;
-                        transition: left 0.3s ease;
-                        z-index: 1;
-                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                    }
+                    color: $color-primary;
                 }
             }
         }
@@ -129,20 +59,23 @@
             margin: 40px 0;
             max-width: 1370px;  
             padding-bottom: 10px; 
+            list-style: none;
+            padding-left: 0;
+            margin-block: 0;
 
             .category-item {
-                max-width: 70px;
+                min-width: 70px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 height: 70px;
-                padding: 0 30px;
-                background: #FFFFFF;
+                padding: 0 15px;
+                background: $color-white;
                 border-radius: 10px;
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+                box-shadow: 0 4px 20px $color-shadow;
                 font-size: $font-size-sm;
                 font-weight: $font-weight-regular;
-                color: #3F4E65;
+                color: $color-primary;
             }
         }
     }

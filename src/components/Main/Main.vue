@@ -13,65 +13,48 @@
                 <h1 class="header">КОСМЕТИКА И ГИГИЕНА</h1>
                 <div class="sort">
                     <span class="sort-text">Сортировка:</span>
-                    <select name="name" id="name-select" class="select">
-                        <option value="">Название</option>
-                        <option value="dog">Производитель</option>
-                        <option value="cat">Цена</option>
-                        <option value="hamster">Бренд</option>
-                    </select>
-                    <div class="switch-container">
-                        <div class="switch-buttons">
-                            <button 
-                                class="switch-btn" 
-                                :class="{ active: activeTab === 'grid' }"
-                                @click="activeTab = 'grid'"
-                            >
-                                <img src="@/assets/images/grid-icon.svg" alt="grid" class="icon">
-                            </button>
-                            <button 
-                                class="switch-btn" 
-                                :class="{ active: activeTab === 'list' }"
-                                @click="activeTab = 'list'"
-                            >
-                                <img src="@/assets/images/list-icon.svg" alt="list" class="icon">
-                            </button>
-                            <div class="active-indicator" :style="{ left: indicatorPosition }"></div>
-                        </div>
-                    </div>
+                    <SelectButton />
+                    <SwitchButton 
+                        :activeTab="activeTab" 
+                        @update:activeTab="activeTab = $event"
+                    />
                 </div>
             </div>
-            <div class="categories-list">
-                <div 
+            <ul class="categories-list">
+                <li 
                     v-for="category in categories" 
                     :key="category.id"
                     class="category-item"
                 >
                     {{ category.name }}
-                </div>
-            </div>
+                </li>
+            </ul>
         </div>
     </header>
 </template>
 
 <script>
-import { CATEGORIES } from '@/constants'
+import { CATEGORIES } from '@/constants';
+import SwitchButton from '@/components/Buttons/SwitchButton.vue'
+import SelectButton from '../Buttons/SelectButton.vue';
 
 export default {
     name: 'AppMain',
+    components: {
+        SelectButton,
+        SwitchButton
+    },
     data() {
         return {
+            selectedSort: 'name',
             activeTab: 'grid',
-            categories: CATEGORIES
-        }
+            categories: CATEGORIES,
+        };
     },
-    computed: {
-        indicatorPosition() {
-            return this.activeTab === 'grid' ? '3px' : '50px';
-        }
-    }
 }
 </script>
 
 <style lang="scss" scoped>
 @import './Main.scss';
 </style>
+
