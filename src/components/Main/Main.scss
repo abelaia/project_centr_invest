@@ -8,26 +8,6 @@
         margin: 0 auto;
         padding: 0 15px;
 
-        .button-section {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 42px;
-
-            .main-btn {
-                padding: 0;
-                color: $color-primary;
-                background: none;
-                border: none;
-                font-size: $font-size-sm;
-                font-weight: $font-weight-light;
-                cursor: pointer;
-
-                &:focus {
-                    color: $color-black;
-                }
-            }
-        }
-
         .top-section {
             display: flex;
             justify-content: space-between;
@@ -76,6 +56,67 @@
                 font-size: $font-size-sm;
                 font-weight: $font-weight-regular;
                 color: $color-primary;
+            }
+        }
+
+        .main-layout {
+            .sidebar {
+                text-align: left;
+
+                .sidebar-title {
+                    margin-bottom: 10px;
+                    font-size: $font-size-md;
+                    font-weight: $font-weight-medium;
+                    color: $color-black;
+                }
+
+                .price-section {
+                    color: $color-black;
+
+                    .price-label {
+                        font-size: $font-size-sm;
+                        font-weight: $font-weight-light; // почему-то этот лайт на сайте не отличается от медиума
+                        color: $color-black;
+
+                        span {
+                            font-size: $font-size-sm;
+                            font-weight: $font-weight-semibold; // поэтому тут semibold сделала
+                            color: $color-black;
+                        }
+                    }
+                }
+
+                .sidebar-buttons {
+                    display: flex;
+                    gap: 10px;
+                    margin-top: 58px;
+
+                    .show-btn {
+                        padding: 20px 50px;
+                        background: $color-secondary;
+                        border: none;
+                        border-radius: 40px;
+                        color: $color-white; 
+                        font-size: $font-size-sm;
+                        font-weight: $font-weight-bold;
+                        cursor: pointer;
+                    }
+
+                    .delete-btn {
+                        width: 60px;
+                        height: 60px;
+
+                        background: $color-secondary;
+                        border: none;
+                        border-radius: 50%;
+                        cursor: pointer;
+
+                        .delete-icon {
+                            width: 25px;
+                            height: 25px;
+                        }
+                    }
+                }
             }
         }
     }

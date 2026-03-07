@@ -48,10 +48,9 @@
                         <img src="@/assets/images/women.png" alt="women" class="women-image">
                     </div>
                 </div>
-                <button class="price-btn">
-                    Прайс-лист
-                    <img src="@/assets/images/save-icon.svg" alt="save" class="price-icon">
-                </button>
+                
+                <PriceButton />
+                
                 <div class="basket-container">
                     <button class="basket-btn">
                         <img src="@/assets/images/basket.svg" alt="basket" class="basket-icon">
@@ -65,11 +64,13 @@
 
 <script>
 import SearchButton from '@/components/Buttons/SearchButton.vue'
+import PriceButton from '@/components/Buttons/PriceButton.vue'
 
 export default {
     name: 'AppHeader',
     components: {
         SearchButton,
+        PriceButton
     }
 }
 </script>

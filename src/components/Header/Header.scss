@@ -184,28 +184,6 @@
                 }
             } 
 
-            .price-btn {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 12px;
-                padding: 20px 44px;
-                background: $color-secondary;
-                border: none;
-                border-radius: 40px;
-                color: $color-white; 
-                font-size: $font-size-sm;
-                font-weight: $font-weight-bold;
-                cursor: pointer;
-                white-space: nowrap;
-
-                .price-icon {
-                    width: 18px;
-                    height: 18px;
-                    object-fit: contain;
-                }
-            }
-
             .basket-container {
                 display: flex;
                 align-items: center;

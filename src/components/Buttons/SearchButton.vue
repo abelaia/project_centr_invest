@@ -22,6 +22,7 @@ export default {
     max-width: 260px;
     width: 100%;
     position: relative;
+    margin-bottom: 15px;
 
     .search-input {
         width: 100%;
@@ -31,6 +32,7 @@ export default {
         border-radius: 36px;
         font-size: $font-size-xs;
         color: $color-gray-dark;
+        background: $color-gray-search;  
     }
 
     .search-btn {
