@@ -47,6 +47,7 @@
                 </aside>
                 
                 <div class="right-content">
+                    <ProductsGrid :products="products" />
                 </div>
             </div>
         </div>
@@ -60,6 +61,7 @@ import SwitchButton from '@/components/Buttons/SwitchButton.vue';
 import SelectButton from '@/components/Buttons/SelectButton.vue';
 import PriceFilter from '@/components/PriceFilter/PriceFilter.vue';
 import Manufacturer from '@/components/Manufacturer/Manufacturer.vue';
+import ProductsGrid from '@/components/Product/ProductsGrid.vue';
 
 export default {
     name: 'AppMain',
@@ -69,12 +71,26 @@ export default {
         SwitchButton,
         PriceFilter,
         Manufacturer,
+        ProductsGrid,
     },
     data() {
         return {
             selectedSort: 'name',
             activeTab: 'grid',
             categories: CATEGORIES,
+            products: [
+                {
+                    id: 1,
+                    badge: 'ARIEL',
+                    size: '15 x 2.8 g',
+                    weight: '450 мл',
+                    title: 'AOS средство для мытья посуды Crystal',
+                    barcode: '4604049097548',
+                    manufacturer: 'Нэфис',
+                    brand: 'AOS',
+                    price: '48.76'
+                },
+            ],
         };
     },
 }

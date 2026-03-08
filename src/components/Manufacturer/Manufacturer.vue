@@ -80,6 +80,7 @@ export default {
 
 .manufacturer {
     margin-top: 30px;
+    
     .manufacturer__title {
         font-size: $font-size-md;
         font-weight: $font-weight-medium;
@@ -88,6 +89,7 @@ export default {
 
     .manufacturer__list {
         margin-bottom: 15px;
+        margin-top: 15px;
         display: flex;
         flex-direction: column;
         gap: 5px; 

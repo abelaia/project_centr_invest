@@ -5,6 +5,7 @@ $font-weight-regular: 400;
 $font-weight-medium: 500;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
+$font-weight-extra-bold: 800;
 
 $font-size-xxs: 10px;
 $font-size-xs: 12px;
@@ -59,4 +60,5 @@ $color-secondary: #FFC85E;
 $gradient-yellow: linear-gradient(180deg, $color-yellow-light 0%, $color-yellow-dark 100%);
 $color-border: rgba(63, 78, 101, 0.2);
 $color-shadow: rgba(0, 0, 0, 0.03);
+$color-shadow-hover: rgba(0, 0, 0, 0.05);
 $color-indicator-shadow: rgba(0, 0, 0, 0.1);

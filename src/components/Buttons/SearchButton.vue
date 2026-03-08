@@ -22,7 +22,6 @@ export default {
     max-width: 260px;
     width: 100%;
     position: relative;
-    margin-bottom: 15px;
 
     .search-input {
         width: 100%;

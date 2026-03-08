@@ -60,6 +60,10 @@
         }
 
         .main-layout {
+            display: flex;
+            gap: 108px;
+            margin-top: 50px;
+
             .sidebar {
                 text-align: left;
 
@@ -117,6 +121,10 @@
                         }
                     }
                 }
+            }
+
+            .right-content {
+
             }
         }
     }
