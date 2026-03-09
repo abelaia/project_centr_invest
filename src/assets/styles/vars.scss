@@ -11,6 +11,7 @@ $font-size-xxs: 10px;
 $font-size-xs: 12px;
 $font-size-sm: 14px;
 $font-size-md: 16px;
+$font-size-xl: 20px;
 $font-size-lg: 24px;
 $font-size-heading: 40px;
 
@@ -56,6 +57,7 @@ $color-switch-bg: #BCA67A;
 $color-yellow-light: #FFC650;
 $color-yellow-dark: #FECA6E;
 $color-secondary: #FFC85E;
+$color-secondary-light: rgba(255, 198, 80, 0.3);
 
 $gradient-yellow: linear-gradient(180deg, $color-yellow-light 0%, $color-yellow-dark 100%);
 $color-border: rgba(63, 78, 101, 0.2);

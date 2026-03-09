@@ -31,7 +31,11 @@ export const baseProducts = [
     }
 ];
 
-export const products = [
-    ...baseProducts,
-    ...baseProducts.map(p => ({ ...p, id: p.id + 3 }))
-];
+export const products = Array.from({ length: 30 }, (_, i) => {
+    const base = baseProducts[i % 3];
+    return {
+        ...base,
+        id: i + 1,
+        title: `${base.title} ${Math.floor(i/3) + 1}`
+    };
+});
