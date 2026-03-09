@@ -1,0 +1,171 @@
+@import '@/assets/styles/vars.scss';
+
+.footer {
+    background: $color-primary;
+    padding: 70px 0 20px;
+    margin-top: 60px;
+
+    .container {
+        max-width: 1370px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    &__columns {
+        display: grid;
+        grid-template-columns: 320px 130px 170px 215px 150px; 
+        gap: 95px;
+        margin-bottom: 40px;
+    }
+
+    &__column {
+        text-align: left;
+
+        &-title {
+            font-size: $font-size-xl;
+            font-weight: $font-weight-semibold;
+            color: $color-white;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        
+        &-title-links {
+            font-size: $font-size-sm;
+            font-weight: $font-weight-regular;
+            color: $color-white;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 15px;
+
+        &-image {
+            width: 65px;
+            height: 50px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+
+        &-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: $color-white;
+            letter-spacing: 2px;
+        }
+    }
+
+    &__description {
+        text-align: left;
+        font-size: $font-size-md;
+        font-weight: $font-weight-regular;
+        line-height: 1.5;
+        color: $color-white;
+        margin-bottom: 45px;
+        max-width: 270px;
+    }
+
+    &__subscribe-title {
+        display: block;
+        text-align: left;
+        font-size: $font-size-xs;
+        font-weight: $font-weight-regular;
+        color: $color-white;
+        margin-bottom: 15px;
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: left;
+    }
+
+    &__link {
+        color: $color-white;
+        text-decoration: none;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-regular;
+        opacity: 0.7;
+        text-align: left;
+        display: inline-block;
+
+        &:hover {
+            color: $color-secondary;
+        }
+    }
+
+    &__social {
+        display: flex;
+        gap: 10px;
+        
+        &-icon {
+            width: 39px;
+            height: 39px;
+            cursor: pointer;
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        text-align: left;
+
+        .footer__phone {
+            color: $color-white;
+            text-decoration: none;
+            font-size: $font-size-sm;
+            font-weight: $font-weight-semibold;
+        }
+
+        .footer__work-time {
+            font-size: $font-size-xs;
+            font-weight: $font-weight-light;
+            color: $color-white;
+            opacity: 0.7;
+        }
+
+        .footer__order-call {
+            color: $color-white;
+            font-size: $font-size-xxs;
+            font-weight: $font-weight-regular;
+            text-decoration: underline;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+    }
+    
+    &__mail {
+        margin-bottom: 25px;
+
+        &-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        &-link {
+            color: $color-white;
+            text-decoration: none;
+            font-size: $font-size-sm;
+            font-weight: $font-weight-semibold;
+        }
+
+        &-description {
+            font-size: $font-size-xs;
+            font-weight: $font-weight-light;
+            color: $color-white;
+        }
+    }
+
+    &__pay {
+        margin-top: 25px;
+        display: flex;
+        gap: 10px;
+    }
+}

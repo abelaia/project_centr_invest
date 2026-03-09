@@ -1,0 +1,101 @@
+<template>
+    <div class="pagination">
+        <button 
+            class="pagination__arrow" 
+            :disabled="currentPage === 1"
+            @click="$emit('update:currentPage', currentPage - 1)"
+        >
+            <img src="@/assets/images/left-arrow.svg" alt="left-arrow" class="arrow-icon">
+        </button>
+        
+        <button 
+            v-for="page in totalPages"  
+            :key="page"
+            class="pagination__btn"
+            :class="{ 'pagination__btn--active': currentPage === page }"
+            @click="$emit('update:currentPage', page)"
+        >
+            {{ page }}
+        </button>
+        
+        <button 
+            class="pagination__arrow"
+            :disabled="currentPage === totalPages"
+            @click="$emit('update:currentPage', currentPage + 1)"
+        >
+            <img src="@/assets/images/right-arrow.svg" alt="right-arrow" class="arrow-icon">
+        </button>
+    </div>
+</template>
+
+<script>
+export default {
+    name: 'PaginationApp',
+    props: {
+        currentPage: {
+            type: Number,
+            required: true
+        },
+        totalPages: {
+            type: Number,
+            required: true
+        }
+    }
+}
+</script>
+
+<style lang="scss" scoped>
+@import '@/assets/styles/vars.scss';
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 70px;
+
+    &__btn {
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: none;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-medium;
+        color: $color-primary;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: all 0.2s ease;
+
+        &--active {
+            background: $color-secondary;
+            color: $color-white;
+        }
+
+        &:hover:not(&--active) {
+            background: $color-secondary-light;
+        }
+    }
+
+    &__arrow {
+        background: none;
+        border: none;
+        font-size: 20px;
+        color: $color-primary;
+        cursor: pointer;
+        padding: 0 10px;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: $color-secondary;
+        }
+
+        &:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+    }
+}
+</style>
