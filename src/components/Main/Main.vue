@@ -91,7 +91,11 @@ export default {
                 </div>
                 
                 <div class="right-content">
-                    <ProductsGrid @add-to-cart="$emit('add-to-cart', $event)" />
+                    <ProductsGrid 
+                        :sortBy="selectedSort"
+                        :viewMode="activeTab"
+                        @add-to-cart="$emit('add-to-cart', $event)" 
+                    />
                     <div class="bottom-text">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
