@@ -1,3 +1,19 @@
+<script>
+export default {
+    name: 'PaginationApp',
+    props: {
+        currentPage: {
+            type: Number,
+            required: true
+        },
+        totalPages: {
+            type: Number,
+            required: true
+        }
+    }
+}
+</script>
+
 <template>
     <div class="pagination">
         <button 
@@ -27,22 +43,6 @@
         </button>
     </div>
 </template>
-
-<script>
-export default {
-    name: 'PaginationApp',
-    props: {
-        currentPage: {
-            type: Number,
-            required: true
-        },
-        totalPages: {
-            type: Number,
-            required: true
-        }
-    }
-}
-</script>
 
 <style lang="scss" scoped>
 @import '@/assets/styles/vars.scss';

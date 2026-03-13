@@ -1,3 +1,18 @@
+<script>
+import AppButton from '@/components/UI/AppButton.vue';
+import AppInputButton from '@/components/UI/AppInputButton.vue';
+import AppBasket from '@/components/UI/AppBasket.vue';
+
+export default {
+    name: 'AppHeader',
+    components: {
+        AppInputButton,
+        AppButton,
+        AppBasket,
+    },
+}
+</script>
+
 <template>
     <header class="header">
         <div class="container">
@@ -31,12 +46,20 @@
                         СУЛТАН
                     </span>
                 </div>
-                <button class="catalog-btn">
-                    Каталог
-                    <img src="@/assets/images/catalog.svg" alt="catalog" class="catalog-button">
-                </button>
 
-                <SearchButton />
+                <AppButton
+                    text="Каталог"
+                    :icon="require('@/assets/images/catalog.svg')"
+                    iconPosition="right"
+                />
+
+                <AppInputButton
+                    placeholder="Поиск..."
+                    :icon="require('@/assets/images/search.svg')"
+                    buttonAlt="search"
+                    variant="search"
+                    @submit="handleSearch"
+                />
 
                 <div class="phone-info">
                     <div class="phone-text">
@@ -49,33 +72,20 @@
                     </div>
                 </div>
                 
-                <PriceButton />
+                <AppButton
+                    text="Прайс-лист"
+                    :icon="require('@/assets/images/save-icon.svg')"
+                    iconPosition="right"
+                />
                 
                 <div class="basket-container">
-                    <button class="basket-btn">
-                        <img src="@/assets/images/basket.svg" alt="basket" class="basket-icon">
-                    </button>
-                    <span class="basket-text">Корзина</span>
+                    <AppBasket ref="basket" />
                 </div>
             </div>
         </div>
     </header>
 </template>
 
-<script>
-import SearchButton from '@/components/Buttons/SearchButton.vue'
-import PriceButton from '@/components/Buttons/PriceButton.vue'
-
-export default {
-    name: 'AppHeader',
-    components: {
-        SearchButton,
-        PriceButton
-    }
-}
-</script>
-
 <style lang="scss" scoped>
 @import './Header.scss';
 </style>
-

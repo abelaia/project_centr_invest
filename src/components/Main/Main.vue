@@ -1,17 +1,53 @@
+<script>
+import { CATEGORIES } from '@/constants';
+import Manufacturer from '@/components/Manufacturer/Manufacturer.vue';
+import ProductsGrid from '@/components/Product/ProductsGrid.vue';
+import AppButton from '@/components/UI/AppButton.vue'
+import AppRoundButton from '@/components/UI/AppRoundButton.vue'
+import AppBreadCrumbs from '@/components/UI/AppBreadCrumbs.vue'
+import AppSelectButton from '@/components/UI/AppSelectButton.vue';
+import AppSwitchButton from '@/components/UI/AppSwitchButton.vue';
+import AppPriceFilter from '@/components/UI/AppPriceFilter.vue';
+
+export default {
+    name: 'AppMain',
+    components: {
+        AppPriceFilter,
+        AppBreadCrumbs,
+        Manufacturer,
+        ProductsGrid,
+        AppButton,
+        AppRoundButton,
+        AppSelectButton,
+        AppSwitchButton,
+    },
+    data() {
+        return {
+            selectedSort: 'name',
+            activeTab: 'grid',
+            categories: CATEGORIES,
+        };
+    },
+    emits: ['add-to-cart'],
+}
+</script>
+
 <template>
     <header class="main">
         <div class="container">
 
-            <Breadcrumbs />
+            <AppBreadCrumbs 
+                :items="breadcrumbs"
+            />
 
             <div class="top-section">
                 <h1 class="header">КОСМЕТИКА И ГИГИЕНА</h1>
                 <div class="sort">
-                    <span class="sort-text">Сортировка:</span>
-                    <SelectButton />
-                    <SwitchButton 
-                        :activeTab="activeTab" 
-                        @update:activeTab="activeTab = $event"
+                    <AppSelectButton 
+                        v-model="selectedSort" 
+                    />
+                    <AppSwitchButton 
+                        v-model="activeTab"
                     />
                 </div>
             </div>
@@ -26,77 +62,52 @@
             </ul>
 
             <div class="main-layout">
-                <aside class="sidebar">
-                    <h2 class="sidebar-title">ПОДБОР ПО ПАРАМЕТРАМ</h2>
+                <div class="filter">
+                    <h2 class="filter-title">ПОДБОР ПО ПАРАМЕТРАМ</h2>
                     
                     <div class="price-section">
                         <span class="price-label">Цена
                              <span>₸</span>
                         </span>
-                        <PriceFilter />
+                        <AppPriceFilter 
+                            minPrice="minPrice"
+                            maxPrice="maxPrice"
+                        />
                     </div>
                     
                     <Manufacturer />
 
-                    <div class="sidebar-buttons">
-                        <button class="show-btn">Показать</button>
-                        <button class="delete-btn">
-                            <img src="@/assets/images/delete-basket.svg" alt="search" class="delete-icon">
-                        </button>
+                    <div class="filter-buttons">
+                        <AppButton
+                            text="Каталог"
+                            :icon="null"
+                            iconPosition="right"
+                        />
+                        <AppRoundButton
+                            :icon="require('@/assets/images/delete-basket.svg')"
+                            size="medium"
+                         />
                     </div>
-                </aside>
+                </div>
                 
                 <div class="right-content">
-                    <ProductsGrid :products="products" />
+                    <ProductsGrid @add-to-cart="$emit('add-to-cart', $event)" />
+                    <div class="bottom-text">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Nullam interdum ut justo, vestibulum sagittis lacus iaculis. 
+                            Quis mattis vulputate feugiat massa vestibulum duis. 
+                            Faucibus consectetur aliquet sed pellentesque consequat 
+                            consectetur congue mauris venenatis. Nunc elit, dignissim 
+                            sed nulla ullamcorper enim, malesuada.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 </template>
 
-<script>
-import Breadcrumbs from '@/components/Breadcrumbs/Breadcrumbs.vue';
-import { CATEGORIES } from '@/constants';
-import SwitchButton from '@/components/Buttons/SwitchButton.vue';
-import SelectButton from '@/components/Buttons/SelectButton.vue';
-import PriceFilter from '@/components/PriceFilter/PriceFilter.vue';
-import Manufacturer from '@/components/Manufacturer/Manufacturer.vue';
-import ProductsGrid from '@/components/Product/ProductsGrid.vue';
-
-export default {
-    name: 'AppMain',
-    components: {
-        Breadcrumbs,
-        SelectButton,
-        SwitchButton,
-        PriceFilter,
-        Manufacturer,
-        ProductsGrid,
-    },
-    data() {
-        return {
-            selectedSort: 'name',
-            activeTab: 'grid',
-            categories: CATEGORIES,
-            products: [
-                {
-                    id: 1,
-                    badge: 'ARIEL',
-                    size: '15 x 2.8 g',
-                    weight: '450 мл',
-                    title: 'AOS средство для мытья посуды Crystal',
-                    barcode: '4604049097548',
-                    manufacturer: 'Нэфис',
-                    brand: 'AOS',
-                    price: '48.76'
-                },
-            ],
-        };
-    },
-}
-</script>
-
 <style lang="scss" scoped>
 @import './Main.scss';
 </style>
-

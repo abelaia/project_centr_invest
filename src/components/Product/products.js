@@ -6,7 +6,7 @@ export const baseProducts = [
         barcode: '4604049097548',
         manufacturer: 'Нэфис',
         brand: 'AOS',
-        price: '48,76 ₸',
+        price: '50,76 ₸',
         image: require('@/assets/images/AOS.jpg')
     },
     {
@@ -16,7 +16,7 @@ export const baseProducts = [
         barcode: '4604049097548',
         manufacturer: 'Нэфис',
         brand: 'AOS',
-        price: '48,76 ₸',
+        price: '70,76 ₸',
         image: require('@/assets/images/Ariel.jpg')
     },
     {

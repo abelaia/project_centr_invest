@@ -1,3 +1,16 @@
+<script>
+import AppButton from '@/components/UI/AppButton.vue';
+import AppInputButton from '@/components/UI/AppInputButton.vue';
+
+export default {
+    name: 'AppFooter',
+    components: {
+        AppButton,
+        AppInputButton,
+    }
+}
+</script>
+
 <template>
     <footer class="footer">
         <div class="container">
@@ -13,7 +26,15 @@
                     
                     <div class="footer__subscribe">
                         <span class="footer__subscribe-title">Подпишись на скидки и акции</span>
-                        <EmailButton />
+                        <AppInputButton
+                            placeholder="Введите ваш E-mail"
+                            :icon="require('@/assets/images/arrow-white.svg')"
+                            buttonAlt="send"
+                            type="email"
+                            variant="email"
+                            maxWidth="280px"
+                            @submit="handleEmailSubmit"
+                        />
                     </div>
                 </div>
 
@@ -40,7 +61,11 @@
 
                 <div class="footer__column">
                     <h4 class="footer__column-title">Скачать прайс-лист:</h4>
-                    <PriceButton />
+                    <AppButton
+                        text="Прайс-лист"
+                        :icon="require('@/assets/images/save-icon.svg')"
+                        iconPosition="right"
+                    />
                     
                     <h4 class="footer__column-title-links">Связь в мессенджерах:</h4>
                     <div class="footer__social">
@@ -74,19 +99,6 @@
         </div>
     </footer>
 </template>
-
-<script>
-import PriceButton from '@/components/Buttons/PriceButton.vue';
-import EmailButton from '@/components/Buttons/EmailButton.vue';
-
-export default {
-    name: 'AppFooter',
-    components: {
-        PriceButton,
-        EmailButton,
-    }
-}
-</script>
 
 <style lang="scss" scoped>
 @import './Footer.scss';

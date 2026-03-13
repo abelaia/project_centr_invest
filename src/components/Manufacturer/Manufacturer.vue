@@ -1,61 +1,22 @@
-<template>
-    <div class="manufacturer">
-        <h3 class="manufacturer__title">Производитель</h3>
-    
-        <SearchButton />
-        
-        <div class="manufacturer__list" :class="{ 'manufacturer__list--expanded': isExpanded }">
-            <label 
-                v-for="item in displayedManufacturers" 
-                :key="item.id" 
-                class="manufacturer__item"
-            >
-                <input 
-                    type="checkbox" 
-                    class="manufacturer__checkbox"
-                    v-model="selectedManufacturers"
-                    :value="item.id"
-                >
-                <span class="manufacturer__name">{{ item.name }}</span>
-                <span class="manufacturer__count">({{ item.count }})</span>
-            </label>
-        </div>
-
-        <button 
-            v-if="manufacturers.length > 4" 
-            class="manufacturer__btn"
-            @click="isExpanded = !isExpanded"
-        >
-            {{ isExpanded ? 'Скрыть ▲' : 'Показать все ▼' }}
-        </button>
-    </div>    
-</template>
-
 <script>
-import SearchButton from '@/components/Buttons/SearchButton.vue';
+import AppInputButton from '@/components/UI/AppInputButton.vue';
+import AppCheckbox from '@/components/UI/AppCheckbox.vue'
+import AppHideShowButton from '@/components/UI/AppHideShowButton.vue'
+import { manufacturers } from '@/constants/manufacturers';
 
 export default {
     name: 'ManufacturerList',
     components: {
-        SearchButton,
+        AppInputButton,
+        AppCheckbox,
+        AppHideShowButton,
     },
     data() {
         return {
             searchQuery: '',
             selectedManufacturers: [],
             isExpanded: false,
-            manufacturers: [
-                { id: 1, name: 'Grifon ', count: 56 },
-                { id: 2, name: 'Boyscout ', count: 66 },
-                { id: 3, name: 'Paclan ', count: 166 },
-                { id: 4, name: 'Булгари Грин ', count: 21 },
-                { id: 5, name: 'Нэфис ', count: 45 },
-                { id: 6, name: 'AOS ', count: 34 },
-                { id: 7, name: 'BIMAX ', count: 28 },
-                { id: 8, name: 'Sorti ', count: 52 },
-                { id: 9, name: 'Grifon Pro ', count: 15 },
-                { id: 10, name: 'Boyscout Premium ', count: 23 }
-            ]
+            manufacturers,
         };
     },
     computed: {
@@ -75,6 +36,37 @@ export default {
 }
 </script>
 
+<template>
+    <div class="manufacturer">
+        <h3 class="manufacturer__title">Производитель</h3>
+    
+        <AppInputButton
+            placeholder="Поиск..."
+            :icon="require('@/assets/images/search.svg')"
+            buttonAlt="search"
+            variant="search"
+            @submit="handleSearch"
+        />
+        
+        <div class="manufacturer__list" :class="{ 'manufacturer__list--expanded': isExpanded }">
+            <AppCheckbox
+                v-for="item in displayedManufacturers" 
+                :key="item.id"
+                v-model="selectedManufacturers"
+                :value="item.id"
+                :label="item.name"
+                :count="item.count"
+            />
+        </div>
+
+        <AppHideShowButton
+            v-if="manufacturers.length > 4"
+            :expanded="isExpanded"
+            @toggle="isExpanded = !isExpanded"
+        />
+    </div>    
+</template>
+
 <style lang="scss" scoped>
 @import '@/assets/styles/vars.scss';
 
@@ -92,23 +84,7 @@ export default {
         margin-top: 15px;
         display: flex;
         flex-direction: column;
-        gap: 5px; 
-
-        .manufacturer__item {
-            font-size: $font-size-sm;
-            font-weight: $font-weight-regular;
-            color: $color-primary;
-        }
-    }
-
-    .manufacturer__btn {
-        background: none;
-        border: none;
-        padding: 0;
-        cursor: pointer;
-        font-size: $font-size-xs;
-        font-weight: $font-weight-medium;
-        color: $color-primary;
+        gap: 5px;
     }
 }
 </style>
