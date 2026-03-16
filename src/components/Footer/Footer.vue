@@ -29,7 +29,7 @@ export default {
                         <AppInputButton
                             placeholder="Введите ваш E-mail"
                             :icon="require('@/assets/images/arrow-white.svg')"
-                            buttonAlt="send"
+                            button-alt="send"
                             type="email"
                             variant="email"
                             maxWidth="280px"
