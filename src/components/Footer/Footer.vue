@@ -77,7 +77,8 @@ export default {
                 <div class="footer__column">
                     <h4 class="footer__column-title">Контакты:</h4>
                     <div class="footer__contacts">
-                        <a href="tel:+77774900091" 
+                        <a
+                           href="tel:+77774900091" 
                            class="footer__phone"
                         >
                            +7 (777) 490-00-91
