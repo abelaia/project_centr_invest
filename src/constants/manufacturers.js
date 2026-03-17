@@ -8,5 +8,5 @@ export const manufacturers = [
     { id: 7, name: 'BIMAX', count: 28 },
     { id: 8, name: 'Sorti', count: 52 },
     { id: 9, name: 'Grifon Pro', count: 15 },
-    { id: 10, name: 'Boyscout Premium', count: 23 }
+    { id: 10, name: 'Boyscout Premium', count: 23 },
 ];

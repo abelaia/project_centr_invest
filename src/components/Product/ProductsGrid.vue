@@ -12,18 +12,18 @@ export default {
     props: {
         sortBy: {
             type: String,
-            default: 'name'
+            default: 'name',
         },
         viewMode: { 
             type: String,
-            default: 'grid'
-        }
+            default: 'grid',
+        },
     },
     data() {
         return {
             allProducts: products,
             currentPage: 1,
-            itemsPerPage: 6
+            itemsPerPage: 6,
         };
     },
     computed: {
@@ -54,15 +54,15 @@ export default {
         },
         totalPages() {
             return Math.ceil(this.allProducts.length / this.itemsPerPage);
-        }
+        },
     },
     watch: {
         sortBy() {
             this.currentPage = 1;
-        }
+        },
     },
     emits: ['add-to-cart'], 
-}
+};
 </script>
 
 <template>

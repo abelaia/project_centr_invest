@@ -21,19 +21,23 @@ export default {
     },
     computed: {
         filteredManufacturers() {
-            if (!this.searchQuery) return this.manufacturers;
-            return this.manufacturers.filter(m => 
-                m.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+            if (!this.searchQuery) {
+                return this.manufacturers;
+            }
+            
+            return this.manufacturers.filter(({name}) => 
+                name.toLowerCase().includes(this.searchQuery.toLowerCase()),
             );
         },
         displayedManufacturers() {
             if (this.isExpanded) {
                 return this.filteredManufacturers;
             }
+
             return this.filteredManufacturers.slice(0, 4);
-        }
-    }
-}
+        },
+    },
+};
 </script>
 
 <template>

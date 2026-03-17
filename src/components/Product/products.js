@@ -7,7 +7,7 @@ export const baseProducts = [
         manufacturer: 'Нэфис',
         brand: 'AOS',
         price: '50,76 ₸',
-        image: require('@/assets/images/AOS.jpg')
+        image: require('@/assets/images/AOS.jpg'),
     },
     {
         id: 2,
@@ -17,7 +17,7 @@ export const baseProducts = [
         manufacturer: 'Нэфис',
         brand: 'AOS',
         price: '70,76 ₸',
-        image: require('@/assets/images/Ariel.jpg')
+        image: require('@/assets/images/Ariel.jpg'),
     },
     {
         id: 3,
@@ -27,7 +27,7 @@ export const baseProducts = [
         manufacturer: 'Нэфис',
         brand: 'AOS',
         price: '48,76 ₸',
-        image: require('@/assets/images/BiMAX.jpg')
+        image: require('@/assets/images/BiMAX.jpg'),
     }
 ];
 
@@ -36,6 +36,6 @@ export const products = Array.from({ length: 30 }, (_, i) => {
     return {
         ...base,
         id: i + 1,
-        title: `${base.title} ${Math.floor(i/3) + 1}`
+        title: `${base.title} ${Math.floor(i/3) + 1}`,
     };
 });

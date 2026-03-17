@@ -29,7 +29,7 @@ export default {
         };
     },
     emits: ['add-to-cart'],
-}
+};
 </script>
 
 <template>

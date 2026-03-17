@@ -9,5 +9,5 @@ export const CATEGORIES = [
     { id: 8, name: 'Подарочные наборы', slug: 'gifts' },
     { id: 9, name: 'Гигиеническая продукция', slug: 'hygiene' },
     { id: 10, name: 'Гигиена полости рта', slug: 'oral-hygiene' },
-    { id: 11, name: 'Бумажная продукция', slug: 'paper' }
-]
+    { id: 11, name: 'Бумажная продукция', slug: 'paper' },
+];

@@ -4,23 +4,23 @@ export default {
     props: {
         modelValue: {
             type: String,
-            default: 'grid'
+            default: 'grid',
         },
         options: {
             type: Array,
             default: () => [
                 { value: 'list', icon: 'list-icon.svg' },
                 { value: 'grid', icon: 'grid-icon.svg' },
-            ]
-        }
+            ],
+        },
     },
     computed: {
         indicatorPosition() {
-            const index = this.options.findIndex(opt => opt.value === this.modelValue)
-            return index === 0 ? '3px' : '50px'
-        }
-    }
-}
+            const index = this.options.findIndex(opt => opt.value === this.modelValue);
+            return index === 0 ? '3px' : '50px';
+        },
+    },
+};
 </script>
 
 <template>

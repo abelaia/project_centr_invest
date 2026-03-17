@@ -4,14 +4,14 @@ export default {
     props: {
         currentPage: {
             type: Number,
-            required: true
+            required: true,
         },
         totalPages: {
             type: Number,
-            required: true
-        }
-    }
-}
+            required: true,
+        },
+    },
+};
 </script>
 
 <template>

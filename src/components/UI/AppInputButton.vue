@@ -3,30 +3,29 @@
 const props = defineProps({
     placeholder: {
         type: String,
-        default: 'Поиск...'
+        default: 'Поиск...',
     },
     icon: {
         type: String,
-        required: true
+        required: true,
     },
     buttonAlt: {
         type: String,
-        default: 'submit'
+        default: 'submit',
     },
     type: {
         type: String,
-        default: 'text'
+        default: 'text',
     },
     variant: {
         type: String,
-        default: 'search'
+        default: 'search',
     },
     maxWidth: {
         type: String,
-        default: '260px'
-    }
-})
-
+        default: '260px',
+    },
+});
 </script>
 
 <template>

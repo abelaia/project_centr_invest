@@ -7,8 +7,8 @@ export default {
     components: {
         AppButton,
         AppInputButton,
-    }
-}
+    },
+};
 </script>
 
 <template>

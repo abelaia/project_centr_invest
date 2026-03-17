@@ -4,19 +4,19 @@ export default {
     props: {
         expanded: {
             type: Boolean,
-            default: false
+            default: false,
         },
         showText: {
             type: String,
-            default: 'Показать все'
+            default: 'Показать все',
         },
         hideText: {
             type: String,
-            default: 'Скрыть'
-        }
+            default: 'Скрыть',
+        },
     },
-    emits: ['toggle']
-}
+    emits: ['toggle'],
+};
 </script>
 
 <template>

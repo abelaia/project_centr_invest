@@ -3,25 +3,24 @@
 defineProps({
     text: {
         type: String,
-        default: 'Прайс-лист'
+        default: 'Прайс-лист',
     },
     icon: {
         type: String,
-        default: '/src/assets/images/save-icon.svg'
+        default: '/src/assets/images/save-icon.svg',
     },
     iconPosition: {
         type: String,
         default: 'right',
-        validator: (value) => ['right', 'left'].includes(value)
+        validator: (value) => ['right', 'left'].includes(value),
     },
     size: {
         type: String,
         default: 'medium',
-        validator: (value) => ['small', 'medium', 'large'].includes(value)
+        validator: (value) => ['small', 'medium', 'large'].includes(value),
     },
-})
-
-defineEmits(['click']) 
+});
+defineEmits(['click']);
 </script>
 
 <template>

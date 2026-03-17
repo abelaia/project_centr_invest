@@ -6,11 +6,11 @@ export default {
             type: Array,
             default: () => [
                 { label: 'Главная' },
-                { label: 'Косметика и гигиена' }
-            ]
-        }
+                { label: 'Косметика и гигиена' },
+            ],
+        },
     },
-}
+};
 </script>
 
 <template>

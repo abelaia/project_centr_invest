@@ -4,27 +4,27 @@ export default {
     data() {
         return {
             items: [],
-            totalPrice: 0
-        }
+            totalPrice: 0,
+        };
     },
     computed: {
         itemCount() {
-            return this.items.length
-        }
+            return this.items.length;
+        },
     },
     methods: {
         addItem(product) {
-            this.items.push(product)
-            this.calculateTotal()
+            this.items.push(product);
+            this.calculateTotal();
         },
         calculateTotal() {
             this.totalPrice = this.items.reduce((sum, item) => {
-                const price = parseFloat(item.price.replace(',', '.').replace('₸', '').trim())
-                return sum + price
-            }, 0)
-        }
-    }
-}
+                const price = parseFloat(item.price.replace(',', '.').replace('₸', '').trim());
+                return sum + price;
+            }, 0);
+        },
+    },
+};
 </script>
 
 <template>

@@ -4,18 +4,18 @@ export default {
     props: {
         minPrice: {
             type: Number,
-            default: 0
+            default: 0,
         },
         maxPrice: {
             type: Number,
-            default: 10000
+            default: 10000,
         },
         inputWidth: {
             type: String,
-            default: '100px'
-        }
+            default: '100px',
+        },
     },
-}
+};
 </script>
 
 <template>

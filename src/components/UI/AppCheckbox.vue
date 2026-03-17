@@ -4,14 +4,14 @@ export default {
     props: {
         label: {
             type: String,
-            required: true
+            required: true,
         },
         count: {
             type: [Number, String],
-            default: null
-        }
+            default: null,
+        },
     },
-}
+};
 </script>
 
 <template>

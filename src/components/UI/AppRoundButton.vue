@@ -3,19 +3,18 @@
 defineProps({
     icon: {
         type: String,
-        required: true
+        required: true,
     },
     alt: {
         type: String,
-        default: ''
+        default: '',
     },
     size: {
         type: String,
-        default: 'medium'
-    }
-})
-
-defineEmits(['click'])
+        default: 'medium',
+    },
+});
+defineEmits(['click']);
 </script>
 
 <template>

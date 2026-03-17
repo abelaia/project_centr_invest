@@ -4,7 +4,7 @@ export default {
     props: {
         modelValue: {
             type: String,
-            default: 'name'
+            default: 'name',
         },
         options: {
             type: Array,
@@ -12,15 +12,15 @@ export default {
                 { value: 'name', label: 'Название' },
                 { value: 'manufacturer', label: 'Производитель' },
                 { value: 'price', label: 'Цена' },
-                { value: 'brand', label: 'Бренд' }
-            ]
+                { value: 'brand', label: 'Бренд' },
+            ],
         },
         placeholder: {
             type: String,
-            default: 'Сортировка:'
-        }
-    }
-}
+            default: 'Сортировка:',
+        },
+    },
+};
 </script>
 
 <template>
