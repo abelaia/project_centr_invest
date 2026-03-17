@@ -31,12 +31,25 @@ export default {
     <div class="basket">
         <button class="basket__btn">
             <div class="basket__icon-wrapper">
-                <img src="@/assets/images/basket.svg" alt="basket" class="basket__icon">
-                <span v-if="itemCount > 0" class="basket__badge">{{ itemCount }}</span>
+                <img 
+                    src="@/assets/images/basket.svg"
+                    alt="basket"
+                    class="basket__icon"
+                >
+                <span 
+                    v-if="itemCount > 0"
+                    class="basket__badge"
+                >
+                    {{ itemCount }}
+                </span>
             </div>
             <div class="basket__info">
-                <span class="basket__text">Корзина</span>
-                <span class="basket__total">{{ totalPrice.toFixed(2).replace('.', ',') }} ₸</span>
+                <span class="basket__text">
+                    Корзина
+                </span>
+                <span class="basket__total">
+                    {{ totalPrice.toFixed(2).replace('.', ',') }} ₸
+                </span>
             </div>
         </button>
     </div>

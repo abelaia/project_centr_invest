@@ -25,7 +25,9 @@ export default {
         @click="$emit('toggle')"
     >
         {{ expanded ? hideText : showText }}
-        <span class="toggle-btn__arrow">{{ expanded ? '▲' : '▼' }}</span>
+        <span class="toggle-btn__arrow">
+            {{ expanded ? '▲' : '▼' }}
+        </span>
     </button>
 </template>
 

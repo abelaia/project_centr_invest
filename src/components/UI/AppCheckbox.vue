@@ -21,8 +21,15 @@ export default {
             class="checkbox__input"
             v-model="checked"
         >
-        <span class="checkbox__label">{{ label }}</span>
-        <span v-if="count" class="checkbox__count">({{ count }})</span>
+        <span class="checkbox__label">
+            {{ label }}
+        </span>
+        <span 
+            v-if="count"
+            class="checkbox__count"
+        >
+            ({{ count }})
+        </span>
     </label>
 </template>
 

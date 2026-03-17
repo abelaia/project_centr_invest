@@ -21,7 +21,11 @@ export default {
             :disabled="currentPage === 1"
             @click="$emit('update:currentPage', currentPage - 1)"
         >
-            <img src="@/assets/images/left-arrow.svg" alt="left-arrow" class="arrow-icon">
+            <img 
+                src="@/assets/images/left-arrow.svg"
+                alt="left-arrow"
+                class="arrow-icon"
+            >
         </button>
         
         <button 
@@ -39,7 +43,11 @@ export default {
             :disabled="currentPage === totalPages"
             @click="$emit('update:currentPage', currentPage + 1)"
         >
-            <img src="@/assets/images/right-arrow.svg" alt="right-arrow" class="arrow-icon">
+            <img 
+                src="@/assets/images/right-arrow.svg"
+                alt="right-arrow"
+                class="arrow-icon"
+            >
         </button>
     </div>
 </template>

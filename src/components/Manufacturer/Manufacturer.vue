@@ -38,8 +38,9 @@ export default {
 
 <template>
     <div class="manufacturer">
-        <h3 class="manufacturer__title">Производитель</h3>
-    
+        <h3 class="manufacturer__title">
+            Производитель
+        </h3>
         <AppInputButton
             placeholder="Поиск..."
             :icon="require('@/assets/images/search.svg')"
@@ -47,7 +48,6 @@ export default {
             variant="search"
             @submit="handleSearch"
         />
-        
         <div class="manufacturer__list" :class="{ 'manufacturer__list--expanded': isExpanded }">
             <AppCheckbox
                 v-for="item in displayedManufacturers" 
@@ -58,7 +58,6 @@ export default {
                 :count="item.count"
             />
         </div>
-
         <AppHideShowButton
             v-if="manufacturers.length > 4"
             :expanded="isExpanded"

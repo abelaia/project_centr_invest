@@ -29,7 +29,9 @@ export default {
                 :value="minPrice"
                 @input="$emit('update:minPrice', +$event.target.value)"
             >
-            <span class="price-filter__separator">-</span>
+            <span class="price-filter__separator">
+                -
+            </span>
             <input 
                 type="number" 
                 placeholder="10000" 

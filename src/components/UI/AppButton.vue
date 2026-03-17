@@ -36,7 +36,12 @@ defineEmits(['click'])
             alt=""
             class="app-btn__icon"
         >
-        <span v-if="text" class="app-btn__text">{{ text }}</span>
+        <span 
+            v-if="text"
+            class="app-btn__text"
+        >
+            {{ text }}
+        </span>
         <img
             v-if="icon && iconPosition === 'right'"
             :src="icon"

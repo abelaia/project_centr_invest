@@ -35,13 +35,13 @@ export default {
 <template>
     <header class="main">
         <div class="container">
-
             <AppBreadCrumbs 
                 :items="breadcrumbs"
             />
-
             <div class="top-section">
-                <h1 class="header">КОСМЕТИКА И ГИГИЕНА</h1>
+                <h1 class="header">
+                    КОСМЕТИКА И ГИГИЕНА
+                </h1>
                 <div class="sort">
                     <AppSelectButton 
                         v-model="selectedSort" 
@@ -60,23 +60,22 @@ export default {
                     {{ category.name }}
                 </li>
             </ul>
-
             <div class="main-layout">
                 <div class="filter">
-                    <h2 class="filter-title">ПОДБОР ПО ПАРАМЕТРАМ</h2>
-                    
+                    <h2 class="filter-title">
+                        ПОДБОР ПО ПАРАМЕТРАМ
+                    </h2>
                     <div class="price-section">
-                        <span class="price-label">Цена
-                             <span>₸</span>
+                        <span class="price-label">
+                            Цена
+                            <span>₸</span>
                         </span>
                         <AppPriceFilter 
                             minPrice="minPrice"
                             maxPrice="maxPrice"
                         />
                     </div>
-                    
                     <Manufacturer />
-
                     <div class="filter-buttons">
                         <AppButton
                             text="Каталог"

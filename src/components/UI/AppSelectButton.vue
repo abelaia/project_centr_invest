@@ -25,7 +25,12 @@ export default {
 
 <template>
     <div class="app-select">
-        <span v-if="placeholder" class="app-select__label">{{ placeholder }}</span>
+        <span 
+            v-if="placeholder" 
+            class="app-select__label"
+        >
+            {{ placeholder }}
+        </span>
         <select 
             class="app-select__field" 
             :value="modelValue"
