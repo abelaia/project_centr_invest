@@ -42,7 +42,7 @@ export default {
             <div
                 class="app-switch__indicator"
                 :style="{ left: indicatorPosition }"
-            ></div>
+            />
         </div>
     </div>
 </template>

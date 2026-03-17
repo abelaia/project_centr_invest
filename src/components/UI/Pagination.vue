@@ -1,6 +1,6 @@
 <script>
 export default {
-    name: 'PaginationApp',
+    name: 'AppPagination',
     props: {
         currentPage: {
             type: Number,
