@@ -162,7 +162,10 @@ export default {
                             Заказать звонок
                         </a>
                         <div class="footer__mail-text">
-                            <a href="#" class="footer__mail-link">
+                            <a 
+                                href="mailto:opt.sultan@mail.ru"
+                                class="footer__mail-link"
+                            >
                                 opt.sultan@mail.ru
                             </a>
                             <span class="footer__mail-description">

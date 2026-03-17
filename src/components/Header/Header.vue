@@ -36,7 +36,7 @@ export default {
                         alt="mail" class="icon"
                     >
                     <div class="mail-text">
-                        <a href="#">
+                        <a href="mailto:opt.sultan@mail.ru">
                             opt.sultan@mail.ru
                         </a>
                         <span>На связи в любое время</span>
