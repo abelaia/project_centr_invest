@@ -30,7 +30,6 @@ export default {
                         Компания «Султан» — снабжаем розничные магазины товарами "под ключ"
                         в Кокчетаве и Акмолинской области
                     </p>
-                    
                     <div class="footer__subscribe">
                         <span class="footer__subscribe-title">
                             Подпишись на скидки и акции
@@ -46,7 +45,6 @@ export default {
                         />
                     </div>
                 </div>
-
                 <div class="footer__column">
                     <h4 class="footer__column-title">
                         Меню сайта:
@@ -78,7 +76,6 @@ export default {
                         </a>
                     </nav>
                 </div>
-
                 <div class="footer__column">
                     <h4 class="footer__column-title">
                         Категории:
@@ -116,7 +113,6 @@ export default {
                         </a>
                     </nav>
                 </div>
-
                 <div class="footer__column">
                     <h4 class="footer__column-title">
                         Скачать прайс-лист:
@@ -126,7 +122,6 @@ export default {
                         :icon="require('@/assets/images/save-icon.svg')"
                         iconPosition="right"
                     />
-                    
                     <h4 class="footer__column-title-links">
                         Связь в мессенджерах:
                     </h4>
@@ -143,7 +138,6 @@ export default {
                         >
                     </div>
                 </div>
-
                 <div class="footer__column">
                     <h4 class="footer__column-title">
                         Контакты:

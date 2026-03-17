@@ -27,7 +27,6 @@ export default {
                 class="arrow-icon"
             >
         </button>
-        
         <button 
             v-for="page in totalPages"  
             :key="page"
@@ -37,7 +36,6 @@ export default {
         >
             {{ page }}
         </button>
-        
         <button 
             class="pagination__arrow"
             :disabled="currentPage === totalPages"

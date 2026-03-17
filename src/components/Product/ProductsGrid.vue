@@ -76,7 +76,6 @@ export default {
                 @add-to-cart="$emit('add-to-cart', $event)"
             />
         </div>
-        
         <Pagination 
             :currentPage="currentPage"
             :totalPages="totalPages"

@@ -88,7 +88,6 @@ export default {
                          />
                     </div>
                 </div>
-                
                 <div class="right-content">
                     <ProductsGrid 
                         :sortBy="selectedSort"
