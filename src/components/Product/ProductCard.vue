@@ -61,20 +61,20 @@ export default {
 @import '@/assets/styles/vars.scss';
 
 .product-card {
-    width: 290px;
-    height: 430px;
-    background: $color-white;
-    border-radius: 10px;
-    padding: 20px 15px;
-    box-shadow: 0 4px 20px $color-shadow;
     display: flex;
     flex-direction: column;
+    width: 290px;
+    height: 430px;
+    padding: 20px 15px;
+    background: $color-white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px $color-shadow;
 
     &--list {
-        width: 100%;
-        height: auto;
         flex-direction: row;
         gap: 30px;
+        width: 100%;
+        height: auto;
         padding: 20px;
 
         .product-card__image-wrapper {
@@ -87,9 +87,9 @@ export default {
         }
 
         .product-card__content {
-            flex: 1;
             display: flex;
             flex-direction: column;
+            flex: 1;
         }
 
         .product-card__title {
@@ -112,41 +112,41 @@ export default {
     &__image {
         width: 100%;
         height: 194px;
-        object-fit: contain;
         margin-bottom: 4px;
+        object-fit: contain;
     }
     
     &__weight {
+        margin-bottom: 10px;
         font-size: $font-size-xs;
         font-weight: $font-weight-regular;
-        color: $color-primary;
-        margin-bottom: 10px;
         text-align: left;
+        color: $color-primary;
     }
 
     &__title {
-        margin: 0px;
         max-width: 280px;
+        margin: 0px;
         font-size: $font-size-md;
-        font-weight: $font-weight-medium;
-        color: $color-black;
+        font-weight: $font-weight-medium;        
         line-height: 1.3;
         text-align: left;
+        color: $color-black;
     } 
 
     &__info {
-        margin-top: 20px;
         display: flex;
         flex-direction: column;
         gap: 10px;
+        margin-top: 20px;
         text-align: left;
 
         p {
             margin: 0;
             font-size: $font-size-sm;
             font-weight: $font-weight-light;
-            color: $color-primary;
             text-align: left;
+            color: $color-primary;
         }
 
         &-value {
@@ -170,4 +170,3 @@ export default {
     }
 }
 </style>
-

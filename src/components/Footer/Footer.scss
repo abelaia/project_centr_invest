@@ -1,9 +1,9 @@
 @import '@/assets/styles/vars.scss';
 
 .footer {
-    background: $color-primary;
-    padding: 70px 0 20px;
     margin-top: 60px;
+    padding: 70px 0 20px;
+    background: $color-primary;
 
     .container {
         max-width: 1370px;
@@ -12,70 +12,70 @@
     }
 
     &__columns {
+        margin-bottom: 40px;
         display: grid;
         grid-template-columns: 320px 130px 170px 215px 150px; 
         gap: 95px;
-        margin-bottom: 40px;
     }
 
     &__column {
         text-align: left;
 
         &-title {
+            margin-bottom: 25px;
             font-size: $font-size-xl;
             font-weight: $font-weight-semibold;
-            color: $color-white;
-            margin-bottom: 25px;
             text-align: left;
+            color: $color-white;
         }
         
         &-title-links {
+            margin-bottom: 15px;
             font-size: $font-size-sm;
             font-weight: $font-weight-regular;
-            color: $color-white;
-            margin-bottom: 15px;
             text-align: left;
+            color: $color-white;
         }
     }
 
     &__logo {
+        margin-bottom: 15px;
         display: flex;
         align-items: center;
         gap: 10px;
-        margin-bottom: 15px;
 
         &-image {
             width: 65px;
             height: 50px;
-            object-fit: contain;
             filter: brightness(0) invert(1);
+            object-fit: contain;
         }
 
         &-text {
             font-size: 24px;
             font-weight: 700;
-            color: $color-white;
             letter-spacing: 2px;
+            color: $color-white;
         }
     }
 
     &__description {
-        text-align: left;
+        max-width: 270px;
+        margin-bottom: 45px;
         font-size: $font-size-md;
         font-weight: $font-weight-regular;
         line-height: 1.5;
+        text-align: left;
         color: $color-white;
-        margin-bottom: 45px;
-        max-width: 270px;
     }
 
     &__subscribe-title {
+        margin-bottom: 15px;
         display: block;
-        text-align: left;
         font-size: $font-size-xs;
         font-weight: $font-weight-regular;
+        text-align: left;
         color: $color-white;
-        margin-bottom: 15px;
     }
 
     &__nav {
@@ -86,13 +86,13 @@
     }
 
     &__link {
-        color: $color-white;
-        text-decoration: none;
+        display: inline-block;
         font-size: $font-size-sm;
         font-weight: $font-weight-regular;
-        opacity: 0.7;
         text-align: left;
-        display: inline-block;
+        text-decoration: none;
+        color: $color-white;
+        opacity: 0.7;
 
         &:hover {
             color: $color-secondary;
@@ -104,8 +104,8 @@
         gap: 10px;
         
         &-icon {
-            width: 39px;
-            height: 39px;
+            width: 40px;
+            height: 40px;
             cursor: pointer;
         }
     }
@@ -117,10 +117,10 @@
         text-align: left;
 
         .footer__phone {
-            color: $color-white;
-            text-decoration: none;
             font-size: $font-size-sm;
             font-weight: $font-weight-semibold;
+            text-decoration: none;
+            color: $color-white;
         }
 
         .footer__work-time {
@@ -131,12 +131,12 @@
         }
 
         .footer__order-call {
-            color: $color-white;
+            margin-bottom: 25px;
+            display: inline-block;
             font-size: $font-size-xxs;
             font-weight: $font-weight-regular;
             text-decoration: underline;
-            display: inline-block;
-            margin-bottom: 25px;
+            color: $color-white;
         }
     }
     
@@ -150,10 +150,10 @@
         }
 
         &-link {
-            color: $color-white;
-            text-decoration: none;
             font-size: $font-size-sm;
             font-weight: $font-weight-semibold;
+            text-decoration: none;
+            color: $color-white;
         }
 
         &-description {

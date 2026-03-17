@@ -35,11 +35,11 @@ export default {
 
     &__btn {
         padding: 0;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-light;
         color: $color-primary;
         background: none;
         border: none;
-        font-size: $font-size-sm;
-        font-weight: $font-weight-light;
         cursor: pointer;
 
         &:focus {

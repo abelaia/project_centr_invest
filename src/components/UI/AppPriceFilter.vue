@@ -57,13 +57,13 @@ export default {
     &__input {
         height: 24px;
         padding: 0 10px;
-        border: none;
-        border-radius: 20px;
         font-size: $font-size-xs;
         font-weight: $font-weight-light;
-        background: rgba(255, 198, 80, 0.3);
-        color: $color-primary;
         text-align: center;
+        color: $color-primary;
+        background: rgba(255, 198, 80, 0.3);
+        border: none;
+        border-radius: 20px;
 
         &:focus {
             outline: none;
@@ -76,8 +76,8 @@ export default {
     }
 
     &__separator {
-        color: $color-primary;
         font-weight: $font-weight-medium;
+        color: $color-primary;
     }
 }
 </style>

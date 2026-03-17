@@ -33,9 +33,9 @@ export default {
     display: flex;
     align-items: center;
     gap: 8px;
-    cursor: pointer;
     font-size: $font-size-sm;
     color: $color-primary;
+    cursor: pointer;
 
     &__input {
         width: 16px;
@@ -44,9 +44,8 @@ export default {
     }
 
     &__count {
-        color: $color-gray-medium;
         font-size: $font-size-xs;
+        color: $color-gray-medium;
     }
 }
 </style>
-

@@ -29,10 +29,10 @@ export default {
                         <AppInputButton
                             placeholder="Введите ваш E-mail"
                             :icon="require('@/assets/images/arrow-white.svg')"
-                            buttonAlt="send"
+                            button-alt="send"
                             type="email"
                             variant="email"
-                            maxWidth="280px"
+                            max-width="280px"
                             @submit="handleEmailSubmit"
                         />
                     </div>
@@ -77,8 +77,9 @@ export default {
                 <div class="footer__column">
                     <h4 class="footer__column-title">Контакты:</h4>
                     <div class="footer__contacts">
-                        <a href="tel:+77774900091" 
-                           class="footer__phone"
+                        <a 
+                            href="tel:+77774900091" 
+                            class="footer__phone"
                         >
                            +7 (777) 490-00-91
                         </a>

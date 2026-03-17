@@ -52,30 +52,30 @@ export default {
 
     &__label {
         font-size: $font-size-md;
-        color: $color-black;
         font-weight: $font-weight-medium;
+        color: $color-black;
     }
 
     &__field {
-        border: none;
-        background: none;
+        padding-right: 20px;
         font-size: $font-size-md;
         font-weight: $font-weight-medium;
         color: $color-primary;
-        appearance: none;
-        padding-right: 20px;
+        background: none;
         background-image: url('@/assets/images/arrow.svg');
         background-repeat: no-repeat;
         background-position: right center;
         background-size: 12px;
+        border: none;
         cursor: pointer;
+        appearance: none;
     }
 }
 
 ::v-deep select option {
-    background: $color-white;
-    color: $color-primary;
     padding: 10px;
+    color: $color-primary;
+    background: $color-white;
     border: none;
 
     &:hover {

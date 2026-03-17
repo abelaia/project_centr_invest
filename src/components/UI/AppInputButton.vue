@@ -68,10 +68,10 @@ const props = defineProps({
         width: 100%;
         height: 59px;
         padding: 0 50px 0 20px;
-        border: 1px solid $color-gray-light;
-        border-radius: 36px;
         font-size: $font-size-xs;
         color: $color-gray-dark;
+        border: 1px solid $color-gray-light;
+        border-radius: 36px;
 
         &:focus {
             outline: none;
@@ -80,14 +80,14 @@ const props = defineProps({
     }
 
     &__btn {
+        position: absolute;
+        right: 10px;
+        top: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
         width: 40px;
         height: 40px;
-        position: absolute;
-        right: 10px;
-        top: 10px;
         background: $color-secondary;
         border: none;
         border-radius: 50%;

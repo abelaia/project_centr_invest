@@ -14,14 +14,14 @@
         padding: 0 15px;
 
         .top-bar {
-            padding: 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
             height: 36px;
-            background: $color-white;
+            padding: 0;
             font-size: $font-size-sm;
             font-family: $font-family-primary;
+            background: $color-white;
             border-bottom: 1px solid $color-border;
 
             .top-bar-left {
@@ -43,13 +43,13 @@
                     align-items: flex-start;
 
                     .address-main {
-                        color: $color-black;
                         font-size: $font-size-sm;
+                        color: $color-black;
                     }
 
                     .adress-market {
-                        color: $color-primary;
                         font-size: $font-size-xs;
+                        color: $color-primary;
                     }
                 }
 
@@ -59,10 +59,10 @@
                     gap: 2px; 
 
                     a {
-                        text-align: start;
-                        color: $color-black;
-                        text-decoration: none;
                         font-size: $font-size-sm;
+                        text-align: start;
+                        text-decoration: none;
+                        color: $color-black;
                     }
 
                     span {
@@ -89,9 +89,9 @@
                     margin-left: 10px;
 
                     a {
-                        color: $color-primary;
-                        text-decoration: none;
                         font-size: $font-size-sm;
+                        text-decoration: none;
+                        color: $color-primary;
                         opacity: 0.7;
                     }
                 }
@@ -99,22 +99,22 @@
         }
 
         .main-bar {
-            padding: 0;
             display: flex;
+            height: 78px;
+            padding: 0;
             align-items: center;
             justify-content: space-between;
-            height: 78px;
             border-bottom: 1px solid $color-border;
             
             .logo {
+                min-width: 120px;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 font-size: 24px;
                 font-weight: 700;
-                color: $color-primary;
                 letter-spacing: 2px;
-                min-width: 120px;
+                color: $color-primary;
 
                 .logo-image {
                     width: 65px;
@@ -133,26 +133,26 @@
                     align-items: end;
 
                     .number {
-                        color: $color-primary;
-                        text-decoration: none;
                         font-size: $font-size-sm;
                         font-weight: $font-weight-semibold;
                         line-height: 1.4;
+                        text-decoration: none;
+                        color: $color-primary;
                     }
                     
-                    span {
-                        color: $color-primary;
+                    span {                       
                         font-size: $font-size-xs;
                         font-weight: $font-weight-light;
                         line-height: 1.4;
+                        color: $color-primary;
                     }
                     
                     .order-call {
-                        color: $color-primary;
                         font-size: $font-size-xxs;
                         font-weight: $font-weight-regular;
-                        text-decoration: underline;
                         line-height: 1.4;
+                        text-decoration: underline;
+                        color: $color-primary;
                     }
                 }
                 
@@ -163,8 +163,8 @@
                     .women-image {
                         width: 50px;
                         height: 70px;
-                        object-fit: contain;
                         cursor: pointer;
+                        object-fit: contain;
                     }
                 }
             } 
@@ -176,17 +176,17 @@
 
                 .basket-btn {
                     display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    background: none;
-                    border: none; 
-                    padding: 0;   
-                    margin: 0;    
-                    cursor: pointer;
                     width: auto;
                     height: auto;
+                    margin: 0;
+                    padding: 0;
+                    align-items: center;
+                    justify-content: center;
                     line-height: 0; 
-
+                    background: none;
+                    border: none; 
+                    cursor: pointer;
+                    
                     .basket-icon {
                         width: 40px;
                         height: 30px;
@@ -195,11 +195,11 @@
                 }
 
                 .basket-text {
-                    color: $color-primary;
                     font-size: 14px;
                     font-weight: 500;
                     white-space: nowrap;
                     line-height: 1;
+                    color: $color-primary;
                 }
             }
         }

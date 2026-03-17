@@ -54,20 +54,20 @@ defineEmits(['click'])
     align-items: center;
     justify-content: center;
     gap: 12px;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    white-space: nowrap;
+    color: $color-white; 
     background: $color-secondary;
     border: none;
     border-radius: 40px;
-    color: $color-white; 
-    font-size: $font-size-sm;
-    font-weight: $font-weight-bold;
-    cursor: pointer;
-    white-space: nowrap;
     transition: all 0.2s ease;
+    cursor: pointer;
 
     &--small {
         padding: 12px 24px;
-        font-size: $font-size-xs;
         gap: 8px;
+        font-size: $font-size-xs;
     }
 
     &--medium {
@@ -96,4 +96,3 @@ defineEmits(['click'])
     }
 }
 </style>
-

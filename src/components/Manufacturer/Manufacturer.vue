@@ -80,11 +80,11 @@ export default {
     }
 
     .manufacturer__list {
-        margin-bottom: 15px;
-        margin-top: 15px;
         display: flex;
         flex-direction: column;
         gap: 5px;
+        margin-bottom: 15px;
+        margin-top: 15px;
     }
 }
 </style>

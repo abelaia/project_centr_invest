@@ -33,12 +33,12 @@ export default {
 @import '@/assets/styles/vars.scss';
 
 .toggle-btn {
-    background: none;
-    border: none;
     padding: 0;
-    cursor: pointer;
     font-size: $font-size-xs;
     font-weight: $font-weight-medium;
     color: $color-primary;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 </style>

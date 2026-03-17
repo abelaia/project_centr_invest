@@ -55,23 +55,23 @@ export default {
     margin-bottom: 70px;
 
     &__btn {
-        width: 35px;
-        height: 35px;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: none;
-        border: none;
+        width: 35px;
+        height: 35px;
         font-size: $font-size-sm;
         font-weight: $font-weight-medium;
         color: $color-primary;
-        cursor: pointer;
+        background: none;
+        border: none;
         border-radius: 50%;
+        cursor: pointer;
         transition: all 0.2s ease;
 
         &--active {
-            background: $color-secondary;
             color: $color-white;
+            background: $color-secondary;
         }
 
         &:hover:not(&--active) {
@@ -80,12 +80,12 @@ export default {
     }
 
     &__arrow {
-        background: none;
-        border: none;
+        padding: 0 10px;
         font-size: 20px;
         color: $color-primary;
+        background: none;
+        border: none;
         cursor: pointer;
-        padding: 0 10px;
         transition: color 0.2s ease;
 
         &:hover {

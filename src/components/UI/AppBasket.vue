@@ -53,10 +53,10 @@ export default {
         display: flex;
         align-items: center;
         gap: 15px;
+        padding: 0;
         background: none;
         border: none;
         cursor: pointer;
-        padding: 0;
     }
 
     &__icon-wrapper {
@@ -74,17 +74,17 @@ export default {
         position: absolute;
         top: -8px;
         right: -8px;
-        width: 18px;
-        height: 18px;
-        background: $color-secondary;
-        color: $color-white;
-        font-weight: $font-weight-bold;
-        font-size: $font-size-sm;
-        border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
+        width: 18px;
+        height: 18px;
         padding: 0 4px;
+        font-weight: $font-weight-bold;
+        font-size: $font-size-sm;
+        color: $color-white;
+        background: $color-secondary;
+        border-radius: 50%;
     }
 
     &__info {
@@ -95,15 +95,15 @@ export default {
     }
 
     &__text {
-        color: $color-primary;
         font-size: $font-size-sm;
         font-weight: $font-weight-light;
+        color: $color-primary;
     }
 
     &__total {
-        color: $color-black;
         font-size: $font-size-sm;
         font-weight: $font-weight-semibold;
+        color: $color-black;
     }
 }
 </style>

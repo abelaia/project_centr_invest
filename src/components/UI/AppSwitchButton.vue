@@ -59,20 +59,20 @@ export default {
         display: flex;
         width: 100px;
         height: 45px;
-        background: $color-switch-bg;
-        opacity: 0.2;
-        border-radius: 30px;
         padding: 3px;
+        background: $color-switch-bg;
+        border-radius: 30px;
+        opacity: 0.2;
     }
 
     &__btn {
-        padding: 0;
         position: relative;
         z-index: 2;
-        flex: 1;
         display: flex;
+        flex: 1;
         align-items: center;
         justify-content: center;
+        padding: 0;
         background: none;
         border: none;
         cursor: pointer;
@@ -90,13 +90,13 @@ export default {
         top: 4px;
         left: 3px;
         bottom: 4px;
+        z-index: 1;
         width: 49px;
         height: 42px;
         background: $color-white;
         border-radius: 27px;
-        transition: left 0.3s ease;
-        z-index: 1;
         box-shadow: 0 2px 4px $color-indicator-shadow;
+        transition: left 0.3s ease;
     }
 }
 </style>
