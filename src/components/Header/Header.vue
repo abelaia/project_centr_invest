@@ -2,7 +2,6 @@
 import AppButton from '@/components/UI/AppButton.vue';
 import AppInputButton from '@/components/UI/AppInputButton.vue';
 import AppBasket from '@/components/UI/AppBasket.vue';
-import AppNavMenu from '@/components/UI/AppNavMenu.vue';
 
 export default {
     name: 'AppHeader',
@@ -10,7 +9,6 @@ export default {
         AppInputButton,
         AppButton,
         AppBasket,
-        AppNavMenu,
     },
 };
 </script>
