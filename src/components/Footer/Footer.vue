@@ -128,16 +128,20 @@ export default {
                         Связь в мессенджерах:
                     </h4>
                     <div class="footer__social">
-                        <img 
-                            src="@/assets/images/whatsapp.svg"
-                            alt="whatsapp"
-                            class="footer__social-icon"
-                        >
-                        <img 
-                            src="@/assets/images/telegram.svg"
-                            alt="telegram"
-                            class="footer__social-icon"
-                        >
+                        <a href="#">
+                            <img 
+                                class="footer__social-icon"
+                                src="@/assets/images/whatsapp.svg"
+                                alt="whatsapp"
+                            >
+                        </a>
+                        <a href="#">
+                            <img 
+                                class="footer__social-icon"
+                                src="@/assets/images/telegram.svg"
+                                alt="telegram"
+                            >
+                        </a>
                     </div>
                 </div>
                 <div class="footer__column">
