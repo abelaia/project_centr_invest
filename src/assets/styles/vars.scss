@@ -5,12 +5,15 @@ $font-weight-regular: 400;
 $font-weight-medium: 500;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
+$font-weight-extra-bold: 800;
 
 $font-size-xxs: 10px;
 $font-size-xs: 12px;
 $font-size-sm: 14px;
 $font-size-md: 16px;
+$font-size-xl: 20px;
 $font-size-lg: 24px;
+$font-size-heading: 40px;
 
 $text-regular: (
     font-family: $font-family-primary,
@@ -41,3 +44,23 @@ $text-number: (
     font-weight: $font-weight-semibold,
     font-size: $font-size-md
 );
+
+$color-primary: #3F4E65;
+$color-black: #111111;
+$color-white: #FFFFFF;
+$color-gray-light: #E5E5E5;
+$color-gray-medium: #9A9A9A;
+$color-gray-dark: #5C6370;
+$color-gray-search: #EDEDED;
+
+$color-switch-bg: #BCA67A;
+$color-yellow-light: #FFC650;
+$color-yellow-dark: #FECA6E;
+$color-secondary: #FFC85E;
+$color-secondary-light: rgba(255, 198, 80, 0.3);
+
+$gradient-yellow: linear-gradient(180deg, $color-yellow-light 0%, $color-yellow-dark 100%);
+$color-border: rgba(63, 78, 101, 0.2);
+$color-shadow: rgba(0, 0, 0, 0.03);
+$color-shadow-hover: rgba(0, 0, 0, 0.05);
+$color-indicator-shadow: rgba(0, 0, 0, 0.1);
