@@ -1,30 +1,24 @@
-<script>
-export default {
-    name: 'AppBasket',
-    data() {
-        return {
-            items: [],
-            totalPrice: 0,
-        };
-    },
-    computed: {
-        itemCount() {
-            return this.items.length;
-        },
-    },
-    methods: {
-        addItem(product) {
-            this.items.push(product);
-            this.calculateTotal();
-        },
-        calculateTotal() {
-            this.totalPrice = this.items.reduce((sum, item) => {
-                const price = parseFloat(item.price.replace(',', '.').replace('₸', '').trim());
-                return sum + price;
-            }, 0);
-        },
-    },
+<script setup>
+import { ref, computed } from 'vue';
+
+const items = ref([]);
+const totalPrice = ref(0);
+
+const itemCount = computed(() => items.value.length);
+
+const calculateTotal = () => {
+    totalPrice.value = items.value.reduce((sum, item) => {
+        const price = parseFloat(item.price.replace(',', '.').replace('₸', '').trim());
+        return sum + price;
+    }, 0);
 };
+
+const addItem = (product) => {
+    items.value.push(product);
+    calculateTotal();
+};
+
+defineExpose({ addItem });
 </script>
 
 <template>
