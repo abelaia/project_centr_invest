@@ -66,7 +66,6 @@ export default {
         display: flex;
         align-items: center;
         gap: 15px;
-        padding: 0;
         background: none;
         border: none;
         cursor: pointer;

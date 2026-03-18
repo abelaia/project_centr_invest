@@ -72,7 +72,6 @@ export default {
         flex: 1;
         align-items: center;
         justify-content: center;
-        padding: 0;
         background: none;
         border: none;
         cursor: pointer;

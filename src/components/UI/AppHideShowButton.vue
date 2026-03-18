@@ -35,7 +35,6 @@ export default {
 @import '@/assets/styles/vars.scss';
 
 .toggle-btn {
-    padding: 0;
     font-size: $font-size-xs;
     font-weight: $font-weight-medium;
     color: $color-primary;

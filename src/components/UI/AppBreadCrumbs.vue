@@ -33,7 +33,6 @@ export default {
     gap: 20px;
 
     &__btn {
-        padding: 0;
         font-size: $font-size-sm;
         font-weight: $font-weight-light;
         color: $color-primary;
