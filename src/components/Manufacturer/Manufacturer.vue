@@ -46,6 +46,7 @@ export default {
             Производитель
         </h3>
         <AppInputButton
+            class="manufacturer__btn-input"
             placeholder="Поиск..."
             :icon="require('@/assets/images/search.svg')"
             buttonAlt="search"
@@ -81,6 +82,10 @@ export default {
         font-size: $font-size-md;
         font-weight: $font-weight-medium;
         color: $color-black;
+    }
+
+    .manufacturer__btn-input {
+        margin-top: 15px;
     }
 
     .manufacturer__list {
