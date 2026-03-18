@@ -58,7 +58,6 @@ export default {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-bottom: 70px;
 
     &__btn {
         display: flex;

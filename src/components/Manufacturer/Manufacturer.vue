@@ -63,6 +63,7 @@ export default {
             />
         </div>
         <AppHideShowButton
+            class="manufacturer__btn-hide-show"
             v-if="manufacturers.length > 4"
             :expanded="isExpanded"
             @toggle="isExpanded = !isExpanded"
@@ -86,7 +87,10 @@ export default {
         display: flex;
         flex-direction: column;
         gap: 5px;
-        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+
+    .manufacturer__btn-hide-show {
         margin-top: 15px;
     }
 }

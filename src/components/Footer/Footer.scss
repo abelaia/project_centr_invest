@@ -12,7 +12,6 @@
     }
 
     &__columns {
-        margin-bottom: 40px;
         display: grid;
         grid-template-columns: 320px 130px 170px 215px 150px; 
         gap: 95px;
@@ -22,7 +21,6 @@
         text-align: left;
 
         &-title {
-            margin-bottom: 25px;
             font-size: $font-size-xl;
             font-weight: $font-weight-semibold;
             text-align: left;
@@ -30,7 +28,6 @@
         }
         
         &-title-links {
-            margin-bottom: 15px;
             font-size: $font-size-sm;
             font-weight: $font-weight-regular;
             text-align: left;
@@ -39,7 +36,6 @@
     }
 
     &__logo {
-        margin-bottom: 15px;
         display: flex;
         align-items: center;
         gap: 10px;
@@ -61,7 +57,6 @@
 
     &__description {
         max-width: 270px;
-        margin-bottom: 45px;
         font-size: $font-size-md;
         font-weight: $font-weight-regular;
         line-height: 1.5;
@@ -70,12 +65,20 @@
     }
 
     &__subscribe-title {
-        margin-bottom: 15px;
+        margin-top: 45px;
         display: block;
         font-size: $font-size-xs;
         font-weight: $font-weight-regular;
         text-align: left;
         color: $color-white;
+    }
+
+    &__btn-email {
+        margin-top: 15px;
+    }
+
+    &__btn-price {
+        margin-top: 25px;
     }
 
     &__nav {
@@ -131,7 +134,6 @@
         }
 
         .footer__order-call {
-            margin-bottom: 25px;
             display: inline-block;
             font-size: $font-size-xxs;
             font-weight: $font-weight-regular;
@@ -141,9 +143,8 @@
     }
     
     &__mail {
-        margin-bottom: 25px;
-
         &-text {
+            margin-top: 25px;
             display: flex;
             flex-direction: column;
             gap: 2px;

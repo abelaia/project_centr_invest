@@ -31,7 +31,6 @@ export default {
 .breadcrumbs {
     display: flex;
     gap: 20px;
-    margin-bottom: 42px;
 
     &__btn {
         padding: 0;

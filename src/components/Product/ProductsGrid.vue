@@ -77,6 +77,7 @@ export default {
             />
         </div>
         <Pagination 
+            class="pagination"
             :currentPage="currentPage"
             :totalPages="totalPages"
             @update:currentPage="currentPage = $event"
@@ -85,16 +86,21 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-bottom: 30px;
-
-    &--list {
-        display: flex;
-        flex-direction: column;
+.products-section {
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         gap: 20px;
+
+        &--list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
+    .pagination {
+        margin-top: 30px;
     }
 }
 </style>

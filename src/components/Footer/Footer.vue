@@ -35,6 +35,7 @@ export default {
                             Подпишись на скидки и акции
                         </span>
                         <AppInputButton
+                            class="footer__btn-email"
                             placeholder="Введите ваш E-mail"
                             :icon="require('@/assets/images/arrow-white.svg')"
                             button-alt="send"
@@ -118,6 +119,7 @@ export default {
                         Скачать прайс-лист:
                     </h4>
                     <AppButton
+                        class="footer__btn-price"
                         text="Прайс-лист"
                         :icon="require('@/assets/images/save-icon.svg')"
                         iconPosition="right"
