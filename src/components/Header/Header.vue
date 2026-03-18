@@ -2,6 +2,7 @@
 import AppButton from '@/components/UI/AppButton.vue';
 import AppInputButton from '@/components/UI/AppInputButton.vue';
 import AppBasket from '@/components/UI/AppBasket.vue';
+import AppNavMenu from '@/components/UI/AppNavMenu.vue';
 
 export default {
     name: 'AppHeader',
@@ -9,6 +10,7 @@ export default {
         AppInputButton,
         AppButton,
         AppBasket,
+        AppNavMenu,
     },
 };
 </script>
@@ -43,20 +45,14 @@ export default {
                     </div>
                 </div>
                 <div class="top-bar-right">
-                    <nav>
-                        <a href="#">
-                            О компании
-                        </a>
-                        <a href="#">
-                            Доставка и оплата
-                        </a>
-                        <a href="#">
-                            Возврат
-                        </a>
-                        <a href="#">
-                            Контакты
-                        </a>
-                    </nav>
+                    <AppNavMenu
+                        :items="[
+                            { label: 'О компании', link: '#' },
+                            { label: 'Доставка и оплата', link: '#' },
+                            { label: 'Возврат', link: '#' },
+                            { label: 'Контакты', link: '#' },
+                        ]"
+                    />
                 </div>
             </div>
             <div class="main-bar">

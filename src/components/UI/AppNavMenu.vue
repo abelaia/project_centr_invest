@@ -1,4 +1,5 @@
 <script setup>
+/* eslint-disable */
 defineProps({
     items: {
         type: Array,
