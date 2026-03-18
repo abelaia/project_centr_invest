@@ -33,7 +33,8 @@ export default {
                     </div>
                     <img 
                         src="@/assets/images/mail-icon.svg"
-                        alt="mail" class="icon"
+                        alt="mail"
+                        class="icon"
                     >
                     <div class="mail-text">
                         <a href="mailto:opt.sultan@mail.ru">
@@ -76,6 +77,7 @@ export default {
                     iconPosition="right"
                 />
                 <AppInputButton
+                    class="subscribe-input"
                     placeholder="Поиск..."
                     :icon="require('@/assets/images/search.svg')"
                     buttonAlt="search"
@@ -85,7 +87,7 @@ export default {
                 <div class="phone-info">
                     <div class="phone-text">
                         <a 
-                            href="#"
+                            href="tel:+77774900091"
                             class="number"
                         >
                             +7 (777) 490-00-91

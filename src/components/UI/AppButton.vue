@@ -1,23 +1,24 @@
 <script setup>
+import { validateIconPosition, validateButtonSize } from '@/utils/validators';
 /* eslint-disable */
 defineProps({
     text: {
         type: String,
-        default: 'Прайс-лист',
+        default: '',
     },
     icon: {
         type: String,
-        default: '/src/assets/images/save-icon.svg',
+        default: '',
     },
     iconPosition: {
         type: String,
         default: 'right',
-        validator: (value) => ['right', 'left'].includes(value),
+        validator: validateIconPosition,
     },
     size: {
         type: String,
         default: 'medium',
-        validator: (value) => ['small', 'medium', 'large'].includes(value),
+        validator: validateButtonSize,
     },
 });
 defineEmits(['click']);
@@ -25,19 +26,19 @@ defineEmits(['click']);
 
 <template>
     <button
-        class="app-btn"
-        :class="`app-btn--${size}`"
+        class="app-button"
+        :class="`app-button--${size}`"
         @click="$emit('click')"
     >
         <img
             v-if="icon && iconPosition === 'left'"
             :src="icon"
             alt=""
-            class="app-btn__icon"
+            class="app-button__icon"
         >
         <span 
             v-if="text"
-            class="app-btn__text"
+            class="app-button__text"
         >
             {{ text }}
         </span>
@@ -45,7 +46,7 @@ defineEmits(['click']);
             v-if="icon && iconPosition === 'right'"
             :src="icon"
             alt=""
-            class="app-btn__icon"
+            class="app-button__icon"
         >
     </button>
 </template>
@@ -53,7 +54,7 @@ defineEmits(['click']);
 <style lang="scss" scoped>
 @import '@/assets/styles/vars.scss';
 
-.app-btn {
+.app-button {
     display: flex;
     align-items: center;
     justify-content: center;

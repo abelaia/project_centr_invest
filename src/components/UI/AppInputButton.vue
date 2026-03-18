@@ -9,7 +9,7 @@ const props = defineProps({
         type: String,
         required: true,
     },
-    buttonAlt: {
+    iconAlt: {
         type: String,
         default: 'submit',
     },
@@ -20,10 +20,6 @@ const props = defineProps({
     variant: {
         type: String,
         default: 'search',
-    },
-    maxWidth: {
-        type: String,
-        default: '260px',
     },
 });
 </script>
