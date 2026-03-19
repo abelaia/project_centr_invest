@@ -1,6 +1,6 @@
 <script setup>
 import { validateIconPosition, validateButtonSize } from '@/utils/validators';
-/* eslint-disable */
+
 defineProps({
     text: {
         type: String,
@@ -21,6 +21,7 @@ defineProps({
         validator: validateButtonSize,
     },
 });
+
 defineEmits(['click']);
 </script>
 
