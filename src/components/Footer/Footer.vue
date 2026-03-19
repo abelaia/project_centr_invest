@@ -1,12 +1,12 @@
 <script>
 import AppButton from '@/components/UI/AppButton.vue';
-import AppInputButton from '@/components/UI/AppInputButton.vue';
+import AppEmailButton from '@/components/UI/AppEmailButton.vue';
 
 export default {
     name: 'AppFooter',
     components: {
         AppButton,
-        AppInputButton,
+        AppEmailButton,
     },
 };
 </script>
@@ -34,14 +34,13 @@ export default {
                         <span class="footer__subscribe-title">
                             Подпишись на скидки и акции
                         </span>
-                        <AppInputButton
+                        <AppEmailButton
                             class="footer__btn-email"
                             placeholder="Введите ваш E-mail"
                             :icon="require('@/assets/images/arrow-white.svg')"
                             button-alt="send"
                             type="email"
                             variant="email"
-                            max-width="280px"
                             @submit="handleEmailSubmit"
                         />
                     </div>
