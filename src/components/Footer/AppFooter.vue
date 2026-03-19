@@ -1,21 +1,7 @@
-<script>
+<script setup>
 import AppButton from '@/components/UI/AppButton.vue';
 import AppEmailButton from '@/components/UI/AppEmailButton.vue';
 import { categoriesItems, menuItems } from '@/constants/menu.js';
-
-export default {
-    name: 'AppFooter',
-    components: {
-        AppButton,
-        AppEmailButton,
-    },
-    data() {
-        return {
-            menuItems,
-            categoriesItems,
-        };
-    },
-};
 </script>
 
 <template>
@@ -160,5 +146,5 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@import './Footer.scss';
+@import './AppFooter.scss';
 </style>
