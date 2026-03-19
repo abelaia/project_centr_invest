@@ -1,12 +1,19 @@
 <script>
 import AppButton from '@/components/UI/AppButton.vue';
 import AppEmailButton from '@/components/UI/AppEmailButton.vue';
+import { categoriesItems, menuItems } from '@/constants/menu.js';
 
 export default {
     name: 'AppFooter',
     components: {
         AppButton,
         AppEmailButton,
+    },
+    data() {
+        return {
+            menuItems,
+            categoriesItems,
+        };
     },
 };
 </script>
@@ -50,29 +57,13 @@ export default {
                         Меню сайта:
                     </h4>
                     <nav class="footer__nav">
-                        <a 
-                            href="#"
-                            class="footer__link"
+                        <a
+                            v-for="item in menuItems"
+                            :key="item.label"
+                            :href="item.link"
+                            class="footer__nav-link"
                         >
-                            О компании
-                        </a>
-                        <a 
-                            href="#"
-                            class="footer__link"
-                        >
-                            Доставка и оплата
-                        </a>
-                        <a 
-                            href="#"
-                            class="footer__link"
-                        >
-                            Возврат
-                        </a>
-                        <a 
-                            href="#"
-                            class="footer__link"
-                        >
-                            Контакты
+                            {{ item.label }}
                         </a>
                     </nav>
                 </div>
@@ -81,35 +72,13 @@ export default {
                         Категории:
                     </h4>
                     <nav class="footer__nav">
-                        <a 
-                            href="#"
-                            class="footer__link"
+                        <a
+                            v-for="item in categoriesItems"
+                            :key="item.label"
+                            :href="item.link"
+                            class="footer__nav-link"
                         >
-                            Бытовая химия
-                        </a>
-                        <a 
-                            href="#"
-                            class="footer__link"
-                        >
-                            Косметика и гигиена
-                        </a>
-                        <a 
-                            href="#"
-                            class="footer__link"
-                        >
-                            Товары для дома
-                        </a>
-                        <a 
-                            href="#"
-                            class="footer__link"
-                        >
-                            Товары для детей и мам
-                        </a>
-                        <a 
-                            href="#"
-                            class="footer__link"
-                        >
-                            Посуда
+                            {{ item.label }}
                         </a>
                     </nav>
                 </div>
