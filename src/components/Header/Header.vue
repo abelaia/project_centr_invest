@@ -1,14 +1,20 @@
 <script>
 import AppButton from '@/components/UI/AppButton.vue';
-import AppInputButton from '@/components/UI/AppInputButton.vue';
+import AppSearchButton from '@/components/UI/AppSearchButton.vue';
 import AppBasket from '@/components/UI/AppBasket.vue';
+import { menuItems } from '@/constants/menu.js';
 
 export default {
     name: 'AppHeader',
     components: {
-        AppInputButton,
+        AppSearchButton,
         AppButton,
         AppBasket,
+    },
+    data() {
+        return {
+            menuItems,
+        };
     },
 };
 </script>
@@ -45,17 +51,12 @@ export default {
                 </div>
                 <div class="top-bar-right">
                     <nav>
-                        <a href="#">
-                            О компании
-                        </a>
-                        <a href="#">
-                            Доставка и оплата
-                        </a>
-                        <a href="#">
-                            Возврат
-                        </a>
-                        <a href="#">
-                            Контакты
+                        <a
+                            v-for="item in menuItems"
+                            :key="item.label"
+                            :href="item.link"
+                        >
+                            {{ item.label }}
                         </a>
                     </nav>
                 </div>
@@ -76,12 +77,11 @@ export default {
                     :icon="require('@/assets/images/catalog.svg')"
                     iconPosition="right"
                 />
-                <AppInputButton
+                <AppSearchButton
                     class="subscribe-input"
                     placeholder="Поиск..."
                     :icon="require('@/assets/images/search.svg')"
-                    buttonAlt="search"
-                    variant="search"
+                    iconAlt="search"
                     @submit="handleSearch"
                 />
                 <div class="phone-info">
@@ -114,7 +114,7 @@ export default {
                     iconPosition="right"
                 />
                 <div class="basket-container">
-                    <AppBasket ref="basket" />
+                    <AppBasket />
                 </div>
             </div>
         </div>

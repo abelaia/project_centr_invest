@@ -1,5 +1,4 @@
 <script setup>
-/* eslint-disable */
 const props = defineProps({
     placeholder: {
         type: String,
@@ -19,16 +18,17 @@ const props = defineProps({
     },
     variant: {
         type: String,
-        default: 'search',
+        default: 'text',
     },
 });
+
+defineExpose({ props });
 </script>
 
 <template>
     <div
         class="input-button"
         :class="`input-button--${variant}`"
-        :style="{ maxWidth }"
     >
         <input
             v-model="inputValue"
@@ -93,10 +93,6 @@ const props = defineProps({
         width: 18px;
         height: 18px;
         object-fit: contain;
-    }
-
-    &--search &__field {
-        background: $color-gray-search;
     }
 
     &--email &__field {
