@@ -1,11 +1,12 @@
 @import '@/assets/styles/vars.scss';
 
 .footer {
+    $self: &;
     margin-top: 60px;
     padding: 70px 0 20px;
     background: $color-primary;
 
-    .container {
+    &__container {
         max-width: 1370px;
         margin: 0 auto;
         padding: 0 15px;
@@ -124,45 +125,43 @@
         margin-top: 25px;
         text-align: left;
 
-        .footer__phone {
+        #{$self}__contacts-phone {
             font-size: $font-size-sm;
             font-weight: $font-weight-semibold;
             text-decoration: none;
             color: $color-white;
         }
 
-        .footer__work-time {
+        #{$self}__contacts-work-time {
             font-size: $font-size-xs;
             font-weight: $font-weight-light;
             color: $color-white;
             opacity: 0.7;
         }
 
-        .footer__order-call {
+        #{$self}__contacts-order-call {
             display: inline-block;
             font-size: $font-size-xxs;
             font-weight: $font-weight-regular;
             text-decoration: underline;
             color: $color-white;
         }
-    }
-    
-    &__mail {
-        &-text {
+
+                #{$self}__contacts-mail-text {
             margin-top: 25px;
             display: flex;
             flex-direction: column;
             gap: 2px;
         }
 
-        &-link {
+        #{$self}__contacts-mail-link {
             font-size: $font-size-sm;
             font-weight: $font-weight-semibold;
             text-decoration: none;
             color: $color-white;
         }
 
-        &-description {
+        #{$self}__contacts-mail-description {
             font-size: $font-size-xs;
             font-weight: $font-weight-light;
             color: $color-white;

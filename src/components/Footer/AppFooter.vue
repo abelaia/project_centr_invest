@@ -1,12 +1,23 @@
 <script setup>
 import AppButton from '@/components/UI/AppButton.vue';
-import AppEmailButton from '@/components/UI/AppEmailButton.vue';
+import AppInput from '@/components/UI/AppInput.vue';
 import { categoriesItems, menuItems } from '@/constants/menu.js';
+
+const downloadPriceList = () => {
+    const link = document.createElement('a');
+    link.href = '/price-list.text';
+    link.download = 'price-list.text';
+    link.click();
+};
+
+const handleEmailSubmit = (email) => {
+    console.log('Подписка на email:', email);
+};
 </script>
 
 <template>
     <footer class="footer">
-        <div class="container">
+        <div class="footer__container">
             <div class="footer__columns">
                 <div class="footer__column">
                     <div class="footer__logo">
@@ -27,13 +38,11 @@ import { categoriesItems, menuItems } from '@/constants/menu.js';
                         <span class="footer__subscribe-title">
                             Подпишись на скидки и акции
                         </span>
-                        <AppEmailButton
+                        <AppInput
                             class="footer__btn-email"
                             placeholder="Введите ваш E-mail"
                             :icon="require('@/assets/images/arrow-white.svg')"
-                            button-alt="send"
-                            type="email"
-                            variant="email"
+                            iconAlt="send"
                             @submit="handleEmailSubmit"
                         />
                     </div>
@@ -77,6 +86,7 @@ import { categoriesItems, menuItems } from '@/constants/menu.js';
                         text="Прайс-лист"
                         :icon="require('@/assets/images/save-icon.svg')"
                         iconPosition="right"
+                        @click="downloadPriceList"
                     />
                     <h4 class="footer__column-title-links">
                         Связь в мессенджерах:
@@ -105,24 +115,24 @@ import { categoriesItems, menuItems } from '@/constants/menu.js';
                     <div class="footer__contacts">
                         <a
                            href="tel:+77774900091" 
-                           class="footer__phone"
+                           class="footer__contacts-phone"
                         >
                            +7 (777) 490-00-91
                         </a>
-                        <span class="footer__work-time">
+                        <span class="footer__contacts-work-time">
                             время работы: 9:00-20:00
                         </span>
-                        <a href="#" class="footer__order-call">
+                        <a href="#" class="footer__contacts-order-call">
                             Заказать звонок
                         </a>
-                        <div class="footer__mail-text">
+                        <div class="footer__contacts-mail-text">
                             <a 
                                 href="mailto:opt.sultan@mail.ru"
-                                class="footer__mail-link"
+                                class="footer__contacts-mail-link"
                             >
                                 opt.sultan@mail.ru
                             </a>
-                            <span class="footer__mail-description">
+                            <span class="footer__contacts-mail-description">
                                 На связи в любое время
                             </span>
                         </div>

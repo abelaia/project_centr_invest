@@ -6,19 +6,11 @@ const props = defineProps({
     },
     icon: {
         type: String,
-        required: true,
+        default: null,
     },
     iconAlt: {
         type: String,
         default: 'submit',
-    },
-    type: {
-        type: String,
-        default: 'text',
-    },
-    variant: {
-        type: String,
-        default: 'text',
     },
 });
 
@@ -28,22 +20,21 @@ defineExpose({ props });
 <template>
     <div
         class="input-button"
-        :class="`input-button--${variant}`"
     >
         <input
             v-model="inputValue"
-            :type="type"
             :placeholder="placeholder"
             class="input-button__field"
             @keyup.enter="handleSubmit"
         >
         <button
+            v-if="icon"
             class="input-button__btn"
             @click="handleSubmit"
         >
             <img
                 :src="icon"
-                :alt="buttonAlt"
+                :alt="iconAlt"
                 class="input-button__icon"
             >
         </button>
