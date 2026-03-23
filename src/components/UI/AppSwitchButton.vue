@@ -1,26 +1,26 @@
-<script>
-export default {
-    name: 'AppSwitch',
-    props: {
-        modelValue: {
-            type: String,
-            default: 'grid',
-        },
-        options: {
-            type: Array,
-            default: () => [
-                { value: 'list', icon: 'list-icon.svg' },
-                { value: 'grid', icon: 'grid-icon.svg' },
-            ],
-        },
+<script setup>
+import { computed } from 'vue';
+
+const props = defineProps({
+    modelValue: {
+        type: String,
+        default: 'grid',
     },
-    computed: {
-        indicatorPosition() {
-            const index = this.options.findIndex(opt => opt.value === this.modelValue);
-            return index === 0 ? '3px' : '50px';
-        },
+    options: {
+        type: Array,
+        default: () => [
+            { value: 'list', icon: 'list-icon.svg' },
+            { value: 'grid', icon: 'grid-icon.svg' },
+        ],
     },
-};
+});
+
+const emit = defineEmits(['update:modelValue']);
+
+const indicatorPosition = computed(() => {
+    const index = props.options.findIndex(opt => opt.value === props.modelValue);
+    return index === 0 ? '3px' : '50px';
+});
 </script>
 
 <template>
@@ -29,9 +29,9 @@ export default {
             <button
                 v-for="(option, idx) in options"
                 :key="idx"
-                class="app-switch__btn"
-                :class="{ 'app-switch__btn--active': modelValue === option.value }"
-                @click="$emit('update:modelValue', option.value)"
+                class="app-switch__button"
+                :class="{ 'app-switch__button--active': modelValue === option.value }"
+                @click="emit('update:modelValue', option.value)"
             >
                 <img
                     :src="require(`@/assets/images/${option.icon}`)"
