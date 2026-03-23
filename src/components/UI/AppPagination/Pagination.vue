@@ -17,6 +17,7 @@ export default {
 <template>
     <div class="pagination">
         <button 
+            type="button"
             class="pagination__arrow" 
             :disabled="currentPage === 1"
             @click="$emit('update:currentPage', currentPage - 1)"

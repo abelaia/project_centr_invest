@@ -27,8 +27,9 @@ const indicatorPosition = computed(() => {
     <div class="app-switch">
         <div class="app-switch__buttons">
             <button
-                v-for="(option, idx) in options"
-                :key="idx"
+                v-for="option in options"
+                :key="option.value"
+                type="button"
                 class="app-switch__button"
                 :class="{ 'app-switch__button--active': modelValue === option.value }"
                 @click="emit('update:modelValue', option.value)"

@@ -1,13 +1,11 @@
 <script setup>
 import { CATEGORIES } from '@/constants/categories.js';
-import ProductsGrid from '@/components/Product/ProductsGrid.vue';
-import AppSwitchButton from '@/components/UI/AppSwitchButton.vue';
 import { useProductsStore } from '@/stores/productsStore';
-import { ref } from 'vue';
+import ProductsGrid from '@/components/Product/ProductsGrid.vue';
+import AppSwitchButton from '@/components/UI/AppSwitchButton/AppSwitchButton.vue';
 
 const store = useProductsStore();
-const selectedSort = ref('name');
-const categories = ref(CATEGORIES);
+const categories = CATEGORIES;
 </script>
 
 <template>
@@ -18,9 +16,7 @@ const categories = ref(CATEGORIES);
                     КОСМЕТИКА И ГИГИЕНА
                 </h1>
                 <div class="main__sort">
-                    <AppSwitchButton 
-                        v-model="store.viewMode"
-                    />
+                    <AppSwitchButton v-model="store.viewMode" />
                 </div>
             </div>
             <ul class="main__categories-list">
@@ -35,7 +31,7 @@ const categories = ref(CATEGORIES);
             <div class="main__layout">
                 <div class="main__right-content">
                     <ProductsGrid 
-                        :sortBy="selectedSort"
+                        :sortBy="store.sortBy"
                         :viewMode="store.viewMode"
                     />
                 </div>
@@ -43,7 +39,6 @@ const categories = ref(CATEGORIES);
         </div>
     </main>
 </template>
-
 
 <style lang="scss" scoped>
 @import './AppMain.scss';

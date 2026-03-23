@@ -6,7 +6,10 @@ const store = useProductsStore();
 
 <template>
     <div class="basket">
-        <button class="basket__btn">
+        <button
+            type="button"
+            class="basket__button"
+        >
             <div class="basket__icon-wrapper">
                 <img 
                     src="@/assets/images/basket.svg"
@@ -39,7 +42,7 @@ const store = useProductsStore();
     display: flex;
     align-items: center;
 
-    &__btn {
+    &__button {
         display: flex;
         align-items: center;
         gap: 15px;

@@ -1,6 +1,6 @@
 <script setup>
-import AppButton from '@/components/UI/AppButton.vue';
-import AppInput from '@/components/UI/AppInput.vue';
+import AppButton from '@/components/UI/AppButton/AppButton.vue';
+import AppInput from '@/components/UI/AppInput/AppInput.vue';
 import { categoriesItems, menuItems } from '@/constants/menu.js';
 
 const downloadPriceList = () => {

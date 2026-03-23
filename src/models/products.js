@@ -6,7 +6,7 @@ export const baseProducts = [
         barcode: '4604049097548',
         manufacturer: 'Нэфис',
         brand: 'AOS',
-        price: '50,76 ₸',
+        price: 50.76,
         image: require('@/assets/images/AOS.jpg'),
     },
     {
@@ -16,7 +16,7 @@ export const baseProducts = [
         barcode: '4604049097548',
         manufacturer: 'Нэфис',
         brand: 'AOS',
-        price: '70,76 ₸',
+        price: 70.76,
         image: require('@/assets/images/Ariel.jpg'),
     },
     {
@@ -26,9 +26,9 @@ export const baseProducts = [
         barcode: '4604049097548',
         manufacturer: 'Нэфис',
         brand: 'AOS',
-        price: '48,76 ₸',
+        price: 48.76,
         image: require('@/assets/images/BiMAX.jpg'),
-    }
+    },
 ];
 
 export const products = Array.from({ length: 30 }, (_, i) => {
@@ -37,5 +37,6 @@ export const products = Array.from({ length: 30 }, (_, i) => {
         ...base,
         id: i + 1,
         title: `${base.title} ${Math.floor(i/3) + 1}`,
+        price: base.price,
     };
 });

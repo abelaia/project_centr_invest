@@ -1,5 +1,5 @@
 <script setup>
-import AppButton from '@/components/UI/AppButton.vue';
+import AppButton from '@/components/UI/AppButton/AppButton.vue';
 import { useProductsStore } from '@/stores/productsStore';
 
 defineProps({
@@ -54,10 +54,10 @@ const store = useProductsStore();
             </div>
             <div class="product-card__bottom">
                 <span class="product-card__price">
-                    {{ product.price }}
+                    {{ product.price }} ₸
                 </span>
                 <AppButton
-                    text="В КОРЗИНУ"
+                    text="В корзину"
                     :icon="require('@/assets/images/white-basket.svg')"
                     iconPosition="right"
                     size="small"

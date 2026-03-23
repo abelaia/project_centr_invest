@@ -1,6 +1,5 @@
 <script setup>
 import { ref, computed, watch } from 'vue';
-import { products } from './products.js';
 import ProductCard from './ProductCard.vue';
 import { useProductsStore } from '@/stores/productsStore';
 
@@ -13,10 +12,10 @@ const props = defineProps({
 
 const store = useProductsStore();
 const currentPage = ref(1);
-const itemsPerPage = ref(6);
+const itemsPerPage = 6;
 
 const sortedProducts = computed(() => {
-    const sorted = [...products].sort((a, b) => {
+    const sorted = [...store.items].sort((a, b) => {
         switch(props.sortBy) {
             case 'name':
                 return a.title.localeCompare(b.title);
@@ -25,9 +24,7 @@ const sortedProducts = computed(() => {
             case 'brand':
                 return a.brand.localeCompare(b.brand);
             case 'price': {
-                const priceA = parseFloat(a.price.replace(',', '.').replace('₸', '').trim());
-                const priceB = parseFloat(b.price.replace(',', '.').replace('₸', '').trim());
-                return priceA - priceB;
+                return a.price - b.price;
             }
             default:
                 return 0;
@@ -37,8 +34,8 @@ const sortedProducts = computed(() => {
 });
 
 const paginatedProducts = computed(() => {
-    const start = (currentPage.value - 1) * itemsPerPage.value;
-    const end = start + itemsPerPage.value;
+    const start = (currentPage.value - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
     return sortedProducts.value.slice(start, end);
 });
 

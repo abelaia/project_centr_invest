@@ -33,6 +33,7 @@ defineExpose({ props });
             @keyup.enter="handleSubmit"
         >
         <button
+            type="button"
             class="input-button__btn"
             @click="handleSubmit"
         >

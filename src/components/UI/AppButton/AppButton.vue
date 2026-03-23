@@ -27,6 +27,7 @@ defineEmits(['click']);
 
 <template>
     <button
+        type="button"
         class="app-button"
         :class="`app-button--${size}`"
         @click="$emit('click')"
@@ -62,6 +63,7 @@ defineEmits(['click']);
     gap: 12px;
     font-size: $font-size-sm;
     font-weight: $font-weight-bold;
+    text-transform: uppercase;
     white-space: nowrap;
     color: $color-white; 
     background: $color-secondary;
