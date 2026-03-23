@@ -1,24 +1,7 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { useProductsStore } from '@/stores/productsStore';
 
-const items = ref([]);
-const totalPrice = ref(0);
-
-const itemCount = computed(() => items.value.length);
-
-const calculateTotal = () => {
-    totalPrice.value = items.value.reduce((sum, item) => {
-        const price = parseFloat(item.price.replace(',', '.').replace('₸', '').trim());
-        return sum + price;
-    }, 0);
-};
-
-const addItem = (product) => {
-    items.value.push(product);
-    calculateTotal();
-};
-
-defineExpose({ addItem });
+const store = useProductsStore();
 </script>
 
 <template>
@@ -31,10 +14,10 @@ defineExpose({ addItem });
                     class="basket__icon"
                 >
                 <span 
-                    v-if="itemCount > 0"
+                    v-if="store.cartCount > 0"
                     class="basket__badge"
                 >
-                    {{ itemCount }}
+                    {{ store.cartCount }}
                 </span>
             </div>
             <div class="basket__info">
@@ -42,7 +25,7 @@ defineExpose({ addItem });
                     Корзина
                 </span>
                 <span class="basket__total">
-                    {{ totalPrice.toFixed(2).replace('.', ',') }} ₸
+                    {{ store.cartTotal.toFixed(2).replace('.', ',') }} ₸
                 </span>
             </div>
         </button>

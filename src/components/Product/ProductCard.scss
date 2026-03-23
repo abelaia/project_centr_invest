@@ -1,0 +1,113 @@
+@import '@/assets/styles/vars.scss';
+
+.product-card {
+    $self: &;
+    display: flex;
+    flex-direction: column;
+    width: 290px;
+    height: 430px;
+    padding: 20px 15px;
+    background: $color-white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px $color-shadow;
+
+    &--list {
+        flex-direction: row;
+        gap: 30px;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+
+        #{$self}__image-wrapper {
+            width: 200px;
+            flex-shrink: 0;
+        }
+
+        #{$self}__image {
+            height: 200px;
+        }
+
+        #{$self}__content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        #{$self}__title {
+            margin-top: 10px;
+        }
+
+        #{$self}__info {
+            margin-top: 15px;
+        }
+
+        #{$self}__bottom {
+            margin-top: 20px;
+        }
+    }
+
+    &__image-wrapper {
+        width: 100%;
+    }
+
+    &__image {
+        width: 100%;
+        height: 194px;
+        object-fit: contain;
+    }
+    
+    &__weight {
+        margin-top: 4px;
+        font-size: $font-size-xs;
+        font-weight: $font-weight-regular;
+        text-align: left;
+        color: $color-primary;
+    }
+
+    &__title {
+        max-width: 280px;
+        margin: 0;
+        margin-top: 10px;
+        font-size: $font-size-md;
+        font-weight: $font-weight-medium;        
+        line-height: 1.3;
+        text-align: left;
+        color: $color-black;
+    } 
+
+    &__info {
+        min-height: 90px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+        text-align: left;
+
+        p {
+            margin: 0;
+            font-size: $font-size-sm;
+            font-weight: $font-weight-light;
+            text-align: left;
+            color: $color-primary;
+        }
+
+        &-value {
+            font-size: $font-size-sm;
+            font-weight: $font-weight-semibold;
+            color: $color-black;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: auto;
+
+        #{$self}__price {
+            font-size: $font-size-md;
+            font-weight: $font-weight-extra-bold;
+            color: $color-black;
+        }
+    }
+}

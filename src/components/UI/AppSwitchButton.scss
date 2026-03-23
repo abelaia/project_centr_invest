@@ -1,0 +1,50 @@
+@import '@/assets/styles/vars.scss';
+
+.app-switch {
+    display: flex;
+    justify-content: flex-end;
+
+    &__buttons {
+        position: relative;
+        display: flex;
+        width: 100px;
+        height: 45px;
+        padding: 3px;
+        background: $color-switch-bg;
+        border-radius: 30px;
+        opacity: 0.2;
+    }
+
+    &__btn {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    &__icon {
+        width: 16px;
+        height: 16px;
+        padding: 10px 16px;
+        object-fit: contain;
+    }
+
+    &__indicator {
+        position: absolute;
+        top: 4px;
+        left: 3px;
+        bottom: 4px;
+        z-index: 1;
+        width: 49px;
+        height: 42px;
+        background: $color-white;
+        border-radius: 27px;
+        box-shadow: 0 2px 4px $color-indicator-shadow;
+        transition: left 0.3s ease;
+    }
+}

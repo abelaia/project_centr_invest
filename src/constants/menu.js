@@ -12,4 +12,3 @@ export const categoriesItems = [
     { label: 'Товары для детей и мам', link: '/children-mothers-products' },
     { label: 'Посуда', link: 'tableware' },
 ];
-
