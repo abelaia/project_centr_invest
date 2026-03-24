@@ -1,46 +1,16 @@
 <script setup>
-import { ref, computed, watch } from 'vue';
+import { ref, computed } from 'vue';
 import ProductCard from './ProductCard.vue';
 import { useProductsStore } from '@/stores/productsStore';
-
-const props = defineProps({
-    sortBy: {
-        type: String,
-        default: 'name',
-    },
-});
 
 const store = useProductsStore();
 const currentPage = ref(1);
 const itemsPerPage = 6;
 
-const sortedProducts = computed(() => {
-    const sorted = [...store.items].sort((a, b) => {
-        switch(props.sortBy) {
-            case 'name':
-                return a.title.localeCompare(b.title);
-            case 'manufacturer':
-                return a.manufacturer.localeCompare(b.manufacturer);
-            case 'brand':
-                return a.brand.localeCompare(b.brand);
-            case 'price': {
-                return a.price - b.price;
-            }
-            default:
-                return 0;
-        }
-    });
-    return sorted;
-});
-
 const paginatedProducts = computed(() => {
     const start = (currentPage.value - 1) * itemsPerPage;
     const end = start + itemsPerPage;
-    return sortedProducts.value.slice(start, end);
-});
-
-watch(() => props.sortBy, () => {
-    currentPage.value = 1;
+    return store.sortedItems.slice(start, end);
 });
 </script>
 

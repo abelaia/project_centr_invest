@@ -30,8 +30,7 @@ const categories = CATEGORIES;
             </ul>
             <div class="main__layout">
                 <div class="main__right-content">
-                    <ProductsGrid 
-                        :sortBy="store.sortBy"
+                    <ProductsGrid
                         :viewMode="store.viewMode"
                     />
                 </div>
