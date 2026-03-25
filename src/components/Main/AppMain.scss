@@ -28,6 +28,12 @@
         display: flex;
         align-items: center;
         gap: 30px;
+
+        &__sort-label {
+            font-size: $font-size-md;
+            font-weight: $font-weight-medium;
+            color: $color-black;
+        }
     }
 
     &__categories-list {
@@ -38,23 +44,23 @@
         margin-top: 25px;
         padding-left: 0;
         list-style: none;
-        
-        #{$self}__category-item {
-            min-width: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 70px;
-            padding: 0 15px;
-            font-size: $font-size-sm;
-            font-weight: $font-weight-regular;
-            color: $color-primary;
-            background: $color-white;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px $color-shadow;
-        }
     }
 
+    &__categories-item {
+        min-width: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 70px;
+        padding: 0 15px;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-regular;
+        color: $color-primary;
+        background: $color-white;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px $color-shadow;
+    }
+    
     &__layout {
         display: flex;
         gap: 108px;

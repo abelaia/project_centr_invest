@@ -47,4 +47,12 @@
         box-shadow: 0 2px 4px $color-indicator-shadow;
         transition: left 0.3s ease;
     }
+    
+    &__button--0.app-switch__button--active ~ &__indicator {
+        left: 3px;
+    }
+
+    &__button--1.app-switch__button--active ~ &__indicator {
+        left: 50px;
+    }
 }

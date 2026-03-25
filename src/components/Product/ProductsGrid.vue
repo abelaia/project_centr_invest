@@ -3,25 +3,41 @@ import { ref, computed } from 'vue';
 import ProductCard from './ProductCard.vue';
 import { useProductsStore } from '@/stores/productsStore';
 
+const props = defineProps({
+    viewMode: {
+        type: String,
+        default: 'grid',
+    },
+});
+
+const ITEMS_PER_PAGE = 6;
+
 const store = useProductsStore();
+
 const currentPage = ref(1);
-const itemsPerPage = 6;
 
 const paginatedProducts = computed(() => {
-    const start = (currentPage.value - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
+    const start = (currentPage.value - 1) * ITEMS_PER_PAGE;
+    const end = start + ITEMS_PER_PAGE;
+    
     return store.sortedItems.slice(start, end);
 });
 </script>
 
 <template>
     <div class="products-section">
-        <div class="products-grid" :class="`products-grid--${store.viewMode}`"> 
+        <div
+            class="products-grid"
+            :class="[
+                'products-grid',
+                `products-grid--${props.viewMode}`,
+            ]"
+        >
             <ProductCard 
                 v-for="product in paginatedProducts" 
                 :key="product.id" 
                 :product="product"
-                :viewMode="store.viewMode"
+                :viewMode="props.viewMode"
             />
         </div>
     </div>

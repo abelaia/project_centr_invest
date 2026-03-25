@@ -1,37 +1,32 @@
 <script setup>
-import { computed } from 'vue';
+import { switchOptions } from '@/models/switchOptions.js';
 
-const props = defineProps({
+defineProps({
     modelValue: {
         type: String,
         default: 'grid',
     },
     options: {
         type: Array,
-        default: () => [
-            { value: 'list', icon: 'list-icon.svg' },
-            { value: 'grid', icon: 'grid-icon.svg' },
-        ],
+        default: () => switchOptions,
     },
 });
 
 const emit = defineEmits(['update:modelValue']);
-
-const indicatorPosition = computed(() => {
-    const index = props.options.findIndex(opt => opt.value === props.modelValue);
-    return index === 0 ? '3px' : '50px';
-});
 </script>
 
 <template>
     <div class="app-switch">
         <div class="app-switch__buttons">
             <button
-                v-for="option in options"
+                v-for="(option, index) in options"
                 :key="option.value"
                 type="button"
                 class="app-switch__button"
-                :class="{ 'app-switch__button--active': modelValue === option.value }"
+                :class="{ 
+                    'app-switch__button--active': modelValue === option.value,
+                    [`app-switch__button--${index}`]: true 
+                }"
                 @click="emit('update:modelValue', option.value)"
             >
                 <img
@@ -42,7 +37,6 @@ const indicatorPosition = computed(() => {
             </button>
             <div
                 class="app-switch__indicator"
-                :style="{ left: indicatorPosition }"
             />
         </div>
     </div>

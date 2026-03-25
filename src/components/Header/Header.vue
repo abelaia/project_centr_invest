@@ -1,7 +1,7 @@
 <script>
 import AppButton from '@/components/UI/AppButton/AppButton.vue';
 import AppSearch from '@/components/UI/AppSearch/AppSearch.vue';
-import AppBasket from '@/components/UI/AppBasket/AppBasket.vue';
+import AppBasket from '@/components/AppBasket/AppBasket.vue';
 import { menuItems } from '@/constants/menu.js';
 
 export default {
