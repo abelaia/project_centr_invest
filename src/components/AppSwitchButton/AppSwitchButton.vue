@@ -1,4 +1,6 @@
 <script setup>
+import { viewModes } from '@/constants/viewModes.js';
+
 defineProps({
     modelValue: {
         type: String,
@@ -15,7 +17,7 @@ const emit = defineEmits(['update:modelValue']);
             <button
                 type="button"
                 class="app-switch__button app-switch__button-list"
-                :class="{ 'app-switch__button--active': modelValue === 'list' }"
+                :class="{ 'app-switch__button--active': modelValue === viewModes.list }"
                 @click="emit('update:modelValue', 'list')"
             >
                 <img
@@ -27,7 +29,7 @@ const emit = defineEmits(['update:modelValue']);
             <button
                 type="button"
                 class="app-switch__button app-switch__button-grid"
-                :class="{ 'app-switch__button--active': modelValue === 'grid' }"
+                :class="{ 'app-switch__button--active': modelValue === viewModes.grid }"
                 @click="emit('update:modelValue', 'grid')"
             >
                 <img
@@ -36,9 +38,7 @@ const emit = defineEmits(['update:modelValue']);
                     class="app-switch__icon"
                 >
             </button>
-            <div
-                class="app-switch__indicator"
-            />
+            <div class="app-switch__indicator" />
         </div>
     </div>
 </template>

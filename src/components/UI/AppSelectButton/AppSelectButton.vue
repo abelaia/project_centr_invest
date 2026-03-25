@@ -6,10 +6,6 @@ defineProps({
         type: String,
         default: 'name',
     },
-    options: {
-        type: Array,
-        default: () => sortOptions,
-    },
 });
 
 defineEmits(['update:modelValue']);
@@ -24,7 +20,7 @@ defineEmits(['update:modelValue']);
         >
             <option 
                 class="app-select__field-option"
-                v-for="option in options" 
+                v-for="option in sortOptions" 
                 :key="option.value"
                 :value="option.value"
             >
@@ -58,25 +54,21 @@ defineEmits(['update:modelValue']);
     }
 
     &__field-option {
+        padding: 10px;
         font-size: $font-size-md;
         font-weight: $font-weight-medium;
         color: $color-primary;
-    }
-}
+        background: $color-white;
+        border: none;
 
-select option {
-    padding: 10px;
-    color: $color-primary;
-    background: $color-white;
-    border: none;
+        &:hover {
+            background: $color-secondary-light;
+        }
 
-    &:hover {
-        background: $color-secondary-light;
-    }
-    
-    &:checked {
-        background: $color-secondary;
-        color: $color-white;
+        &:selected {
+            background: $color-secondary;
+            color: $color-white;
+        }
     }
 }
 </style>
