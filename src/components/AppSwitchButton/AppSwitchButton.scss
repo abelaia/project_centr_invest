@@ -46,13 +46,14 @@
         border-radius: 27px;
         box-shadow: 0 2px 4px $color-indicator-shadow;
         transition: left 0.3s ease;
+        transform: translate(0px);
     }
     
-    &__button--0.app-switch__button--active ~ &__indicator {
-        left: 3px;
+    &__button-list.app-switch__button--active ~ &__indicator {
+        transform: translateX(3px);
     }
 
-    &__button--1.app-switch__button--active ~ &__indicator {
-        left: 50px;
+    &__button-grid.app-switch__button--active ~ &__indicator {
+        transform: translateX(50px);
     }
 }

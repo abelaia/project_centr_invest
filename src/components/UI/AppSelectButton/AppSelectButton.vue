@@ -1,4 +1,6 @@
 <script setup>
+import { sortOptions } from '@/models/sortOptions.js';
+
 defineProps({
     modelValue: {
         type: String,
@@ -6,12 +8,7 @@ defineProps({
     },
     options: {
         type: Array,
-        default: () => [
-            { value: 'name', label: 'Название' },
-            { value: 'manufacturer', label: 'Производитель' },
-            { value: 'price', label: 'Цена' },
-            { value: 'brand', label: 'Бренд' },
-        ],
+        default: () => sortOptions,
     },
 });
 
@@ -26,6 +23,7 @@ defineEmits(['update:modelValue']);
             @change="$emit('update:modelValue', $event.target.value)"
         >
             <option 
+                class="app-select__field-option"
                 v-for="option in options" 
                 :key="option.value"
                 :value="option.value"
@@ -57,6 +55,12 @@ defineEmits(['update:modelValue']);
         border: none;
         cursor: pointer;
         appearance: none;
+    }
+
+    &__field-option {
+        font-size: $font-size-md;
+        font-weight: $font-weight-medium;
+        color: $color-primary;
     }
 }
 

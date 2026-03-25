@@ -4,7 +4,7 @@ import { CATEGORIES } from '@/constants/categories.js';
 import { useProductsStore } from '@/stores/productsStore';
 import ProductsGrid from '@/components/Product/ProductsGrid.vue';
 import AppSelectButton from '@/components/UI/AppSelectButton/AppSelectButton.vue';
-import AppSwitchButton from '@/components/UI/AppSwitchButton/AppSwitchButton.vue';
+import AppSwitchButton from '@/components/AppSwitchButton/AppSwitchButton.vue';
 
 const store = useProductsStore();
 const viewMode = ref('grid'); 
