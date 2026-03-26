@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from 'vue';
 const props = defineProps({
     placeholder: {
         type: String,
@@ -18,6 +19,13 @@ const props = defineProps({
     },
 });
 
+const emit = defineEmits(['submit']);
+
+const searchValue = ref('');
+
+const handleSubmit = () => {
+    emit('submit', searchValue.value);
+};
 defineExpose({ props });
 </script>
 
