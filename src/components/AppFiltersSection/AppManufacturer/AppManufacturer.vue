@@ -2,34 +2,25 @@
 import { ref, computed } from 'vue';
 import { manufacturers } from '@/constants/manufacturers.js';
 import AppSearch from '@/components/UI/AppSearch/AppSearch.vue';
-import AppCheckbox from '@/components/UI/AppCheckbox/AppCheckbox.vue';
+import AppCheckbox from '@/components/AppFiltersSection/AppCheckbox/AppCheckbox.vue';
 import AppHideShowButton from '@/components/UI/AppHideShowButton/AppHideShowButton.vue';
 
-const searchQuery = ref('');
-const selectedManufacturers = ref([]);
+const props = defineProps({
+    modelValue: {
+        type: Array,
+        default: () => [],
+    },
+});
+
+const emit = defineEmits(['update:modelValue']);
 const isExpanded = ref(false);
-const allManufacturers = ref(manufacturers);
-
-const filteredManufacturers = computed(() => {
-    if (!searchQuery.value) {
-        return allManufacturers.value;
-    }
-    
-    return allManufacturers.value.filter(({ name }) => 
-        name.toLowerCase().includes(searchQuery.value.toLowerCase()),
-    );
-});
-
 const displayedManufacturers = computed(() => {
-    if (isExpanded.value) {
-        return filteredManufacturers.value;
-    }
-
-    return filteredManufacturers.value.slice(0, 4);
+    if (isExpanded.value) return manufacturers;
+    return manufacturers.slice(0, 4);
 });
 
-const handleSearch = (value) => {
-    searchQuery.value = value;
+const updateSelected = (selected) => {
+    emit('update:modelValue', selected);
 };
 </script>
 
@@ -50,10 +41,11 @@ const handleSearch = (value) => {
             <AppCheckbox
                 v-for="item in displayedManufacturers" 
                 :key="item.id"
-                v-model="selectedManufacturers"
-                :value="item.id"
+                :model-value="props.modelValue"
+                :value="item.name"
                 :label="item.name"
                 :count="item.count"
+                @update:model-value="updateSelected"
             />
         </div>
         <AppHideShowButton

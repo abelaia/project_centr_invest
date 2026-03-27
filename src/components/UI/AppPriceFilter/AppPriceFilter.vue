@@ -11,6 +11,7 @@ export default {
             default: 10000,
         },
     },
+    emits: ['update:minPrice', 'update:maxPrice'],
 };
 </script>
 
