@@ -1,0 +1,38 @@
+@import '@/assets/styles/vars.scss';
+
+.price-filter {
+    margin-top: 16px;
+
+    &__inputs {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__input {
+        width: 100px;
+        height: 24px;
+        padding: 0 10px;
+        font-size: $font-size-xs;
+        font-weight: $font-weight-light;
+        text-align: center;
+        color: $color-primary;
+        background: rgba(255, 198, 80, 0.3);
+        border: none;
+        border-radius: 20px;
+
+        &:focus {
+            outline: none;
+            border-color: $color-primary;
+        }
+
+        &::placeholder {
+            color: $color-gray-medium;
+        }
+    }
+
+    &__separator {
+        font-weight: $font-weight-medium;
+        color: $color-primary;
+    }
+}

@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from 'vue';
 const props = defineProps({
     placeholder: {
         type: String,
@@ -17,6 +18,13 @@ const props = defineProps({
         default: 'text',
     },
 });
+
+const emit = defineEmits(['submit']);
+const searchValue = ref('');
+
+const handleSubmit = () => {
+    emit('submit', searchValue.value);
+};
 
 defineExpose({ props });
 </script>
@@ -61,7 +69,7 @@ defineExpose({ props });
         padding: 0 50px 0 20px;
         font-size: $font-size-xs;
         color: $color-gray-dark;
-        background: $color-white;
+        background: $color-gray-search;
         border: 1px solid $color-gray-light;
         border-radius: 36px;
 

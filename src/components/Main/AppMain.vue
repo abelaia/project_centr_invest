@@ -2,12 +2,18 @@
 import { ref } from 'vue';
 import { CATEGORIES } from '@/constants/categories.js';
 import { useProductsStore } from '@/stores/productsStore';
-import ProductsGrid from '@/components/Product/ProductsGrid.vue';
 import AppSelectButton from '@/components/UI/AppSelectButton/AppSelectButton.vue';
 import AppSwitchButton from '@/components/AppSwitchButton/AppSwitchButton.vue';
+import ProductsGrid from '@/components/Product/ProductsGrid.vue';
+import AppFilters from '@/components/AppFiltersSection/AppFilters/AppFilters.vue';
 
 const store = useProductsStore();
-const viewMode = ref('grid'); 
+const viewMode = ref('grid');
+const currentFilters = ref(null);
+
+const applyFilters = (filters) => {
+    currentFilters.value = filters;
+};
 </script>
 
 <template>
@@ -33,8 +39,12 @@ const viewMode = ref('grid');
                 </li>
             </ul>
             <div class="main__layout">
+                <AppFilters @apply="applyFilters" />
                 <div class="main__right-content">
-                    <ProductsGrid :viewMode="viewMode" />
+                    <ProductsGrid                         
+                        :viewMode="viewMode" 
+                        :filters="currentFilters"
+                    />
                 </div>
             </div>
         </div>
