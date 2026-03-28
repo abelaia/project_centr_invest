@@ -98,9 +98,13 @@ defineEmits(['click']);
         line-height: 1;
     }
 
-    &:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
+    &:hover {
+        background: $color-yellow-light;
+    }
+
+    &:active {
+        transform: scale(0.96);
+        transition: all 0.05s ease;
     }
 }
 </style>

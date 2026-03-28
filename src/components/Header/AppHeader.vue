@@ -1,21 +1,12 @@
-<script>
+<script setup>
+import { menuItems } from '@/constants/menu.js';
+import { downloadFile } from '@/utils/download.js';
 import AppButton from '@/components/UI/AppButton/AppButton.vue';
 import AppSearch from '@/components/UI/AppSearch/AppSearch.vue';
 import AppBasket from '@/components/AppBasket/AppBasket.vue';
-import { menuItems } from '@/constants/menu.js';
 
-export default {
-    name: 'AppHeader',
-    components: {
-        AppSearch,
-        AppButton,
-        AppBasket,
-    },
-    data() {
-        return {
-            menuItems,
-        };
-    },
+const downloadPriceList = () => {
+    downloadFile('/price-list.text', 'price-list.text');
 };
 </script>
 
@@ -63,7 +54,10 @@ export default {
                 </div>
             </div>
             <div class="header__main-bar">
-                <div class="header__logo">
+                <a 
+                    href="/"
+                    class="header__logo"
+                >
                     <img 
                         src="@/assets/images/sultan.svg"
                         alt="sultan"
@@ -72,7 +66,7 @@ export default {
                     <span class="header__logo-text">
                         СУЛТАН
                     </span>
-                </div>
+                </a>
                 <AppButton
                     text="Каталог"
                     :icon="require('@/assets/images/catalog.svg')"
@@ -124,5 +118,5 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@import './Header.scss';
+@import './AppHeader.scss';
 </style>

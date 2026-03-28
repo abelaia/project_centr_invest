@@ -7,7 +7,13 @@ import AppRoundButton from '@/components/UI/AppRoundButton/AppRoundButton.vue';
 
 const { filters, resetFilters, updatePrice } = useFilters();
 const emit = defineEmits(['apply']);
+
 const applyFilters = () => {
+    emit('apply', filters.value);
+};
+
+const handleReset = () => {
+    resetFilters();
     emit('apply', filters.value);
 };
 </script>
@@ -40,7 +46,7 @@ const applyFilters = () => {
             <AppRoundButton
                 :icon="require('@/assets/images/delete-basket.svg')"
                 size="medium"
-                @click="resetFilters"
+                @click="handleReset"
             />
         </div>
     </div>

@@ -62,32 +62,56 @@ watch(() => props.filters, () => {
 
 <template>
     <div class="products-section">
-        <div
-            class="products-grid"
-            :class="[
-                'products-grid',
-                `products-grid--${props.viewMode}`,
-            ]"
+        <div 
+            v-if="filteredProducts.length === 0"
+            class="products-section__empty"
         >
-            <ProductCard 
-                v-for="product in paginatedProducts" 
-                :key="product.id" 
-                :product="product"
-                :viewMode="props.viewMode"
-            />
+            <p>Ничего не найдено</p>
         </div>
-        <Pagination 
-            class="pagination"
-            :currentPage="currentPage"
-            :totalPages="totalPages"
-            @update:currentPage="currentPage = $event"
-        />
+        <template v-else>
+            <div
+                class="products-section__grid"
+                :class="[
+                    'products-section__grid',
+                    `products-section__grid--${props.viewMode}`,
+                ]"
+            >
+                <ProductCard 
+                    v-for="product in paginatedProducts" 
+                    :key="product.id" 
+                    :product="product"
+                    :viewMode="props.viewMode"
+                />
+            </div>
+            <Pagination 
+                class="products-section__pagination"
+                v-if="totalPages > 1"
+                :currentPage="currentPage"
+                :totalPages="totalPages"
+                @update:currentPage="currentPage = $event"
+            />
+        </template>
     </div>
 </template>
 
 <style lang="scss" scoped>
+@import '@/assets/styles/vars.scss';
+
 .products-section {
-    .products-grid {
+    &__empty {
+        text-align: center;
+        margin-top: 100px;
+        margin-left: 300px;
+
+        p {
+            margin-bottom: 10px;
+            font-size: $font-size-heading;
+            font-weight: $font-weight-semibold;
+            color: $color-primary;
+        }
+    }
+
+    &__grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
@@ -99,7 +123,7 @@ watch(() => props.filters, () => {
         }
     }
 
-    .pagination {
+    &__pagination {
         margin-top: 50px;
     }
 }

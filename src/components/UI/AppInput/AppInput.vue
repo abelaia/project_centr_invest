@@ -78,6 +78,15 @@ defineExpose({ props });
         border: none;
         border-radius: 50%;
         cursor: pointer;
+
+        &:hover {
+            background: $color-yellow-light;
+        }
+
+        &:active {
+            transform: scale(0.96);
+            transition: all 0.05s ease;
+        }
     }
 
     &__icon {

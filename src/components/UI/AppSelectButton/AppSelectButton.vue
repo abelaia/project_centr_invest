@@ -65,7 +65,7 @@ defineEmits(['update:modelValue']);
             background: $color-secondary-light;
         }
 
-        &:selected {
+        &:checked {
             background: $color-secondary;
             color: $color-white;
         }

@@ -90,12 +90,14 @@ const store = useProductsStore();
         font-size: $font-size-sm;
         font-weight: $font-weight-light;
         color: $color-primary;
+        cursor: default;
     }
 
     &__total {
         font-size: $font-size-sm;
         font-weight: $font-weight-semibold;
         color: $color-black;
+        cursor: default;
     }
 }
 </style>
