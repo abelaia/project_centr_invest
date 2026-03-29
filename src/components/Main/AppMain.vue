@@ -30,8 +30,8 @@ const applyFilters = (filters) => {
                 </div>
             </div>
             <ul class="main__categories-list">
-                <li 
-                    v-for="category in CATEGORIES" 
+                <li
+                    v-for="category in CATEGORIES"
                     :key="category.id"
                     class="main__categories-item"
                 >

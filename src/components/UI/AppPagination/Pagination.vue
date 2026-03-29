@@ -31,8 +31,8 @@ export default {
         <button 
             v-for="page in totalPages"  
             :key="page"
-            class="pagination__btn"
-            :class="{ 'pagination__btn--active': currentPage === page }"
+            class="pagination__button"
+            :class="{ 'pagination__button--active': currentPage === page }"
             @click="$emit('update:currentPage', page)"
         >
             {{ page }}
@@ -60,7 +60,7 @@ export default {
     align-items: center;
     gap: 10px;
 
-    &__btn {
+    &__button {
         display: flex;
         align-items: center;
         justify-content: center;

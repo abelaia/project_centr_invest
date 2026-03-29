@@ -59,6 +59,12 @@
         background: $color-white;
         border-radius: 10px;
         box-shadow: 0 4px 20px $color-shadow;
+        cursor: pointer;
+
+        &:active {
+            transform: scale(0.96);
+            transition: all 0.05s ease;
+        }
     }
     
     &__layout {

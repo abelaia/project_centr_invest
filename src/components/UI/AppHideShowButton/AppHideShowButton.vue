@@ -29,14 +29,14 @@ export default {
 
 <template>
     <button 
-        class="toggle-btn"
+        class="toggle-button"
         @click="$emit('toggle')"
     >
         {{ expanded ? hideText : showText }}
         <img 
             :src="expanded ? iconHide : iconShow"
             alt="arrow"
-            class="toggle-btn__icon"
+            class="toggle-button__icon"
         >
     </button>
 </template>
@@ -44,7 +44,7 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/styles/vars.scss';
 
-.toggle-btn {
+.toggle-button {
     font-size: $font-size-xs;
     font-weight: $font-weight-medium;
     color: $color-primary;

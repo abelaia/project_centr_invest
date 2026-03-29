@@ -42,7 +42,7 @@ defineExpose({ props });
         >
         <button
             type="button"
-            class="input-button__btn"
+            class="input-button__button"
             @click="handleSubmit"
         >
             <img
@@ -79,7 +79,7 @@ defineExpose({ props });
         }
     }
 
-    &__btn {
+    &__button {
         position: absolute;
         right: 10px;
         top: 10px;
