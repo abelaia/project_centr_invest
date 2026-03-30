@@ -12,7 +12,7 @@ const downloadPriceList = () => {
 
 <template>
     <header class="header">
-        <div class="header__container">
+        <div class="header__top-bar-section">
             <div class="header__top-bar">
                 <div class="header__top-bar-left">
                     <img 
@@ -53,6 +53,8 @@ const downloadPriceList = () => {
                     </nav>
                 </div>
             </div>
+        </div>
+        <div class="header__main-bar-section">
             <div class="header__main-bar">
                 <a 
                     href="/"

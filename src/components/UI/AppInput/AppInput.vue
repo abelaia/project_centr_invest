@@ -81,9 +81,11 @@ defineExpose({ props });
 
         &:hover {
             background: $color-yellow-light;
+            opacity: 1;
         }
 
         &:active {
+            opacity: 1;
             transform: scale(0.96);
             transition: all 0.05s ease;
         }

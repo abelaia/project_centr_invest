@@ -1,7 +1,9 @@
 <script setup>
 import { ref } from 'vue';
 import { CATEGORIES } from '@/constants/categories.js';
+import { breadcrumbs } from '@/constants/breadcrumbs.js';
 import { useProductsStore } from '@/stores/productsStore';
+import AppBreadCrumbs from '@/components/UI/AppBreadCrumbs/AppBreadCrumbs.vue';
 import AppSelectButton from '@/components/UI/AppSelectButton/AppSelectButton.vue';
 import AppSwitchButton from '@/components/AppSwitchButton/AppSwitchButton.vue';
 import ProductsGrid from '@/components/Product/ProductsGrid.vue';
@@ -9,6 +11,7 @@ import AppFilters from '@/components/AppFiltersSection/AppFilters/AppFilters.vue
 
 const store = useProductsStore();
 const viewMode = ref('grid');
+const currentBreadCrumbs = breadcrumbs.cosmetics;
 const currentFilters = ref(null);
 
 const applyFilters = (filters) => {
@@ -19,6 +22,9 @@ const applyFilters = (filters) => {
 <template>
     <main class="main">
         <div class="main__container">
+            <AppBreadCrumbs 
+                :items="currentBreadCrumbs"
+            />
             <div class="main__top-section">
                 <h1 class="main__title">
                     КОСМЕТИКА И ГИГИЕНА
@@ -30,8 +36,8 @@ const applyFilters = (filters) => {
                 </div>
             </div>
             <ul class="main__categories-list">
-                <li
-                    v-for="category in CATEGORIES"
+                <li 
+                    v-for="category in CATEGORIES" 
                     :key="category.id"
                     class="main__categories-item"
                 >
@@ -39,7 +45,7 @@ const applyFilters = (filters) => {
                 </li>
             </ul>
             <div class="main__layout">
-                <AppFilters @apply="applyFilters" />
+                <AppFilters @apply="applyFilters"/>
                 <div class="main__right-content">
                     <ProductsGrid                         
                         :viewMode="viewMode" 

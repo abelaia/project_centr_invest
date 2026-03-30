@@ -152,6 +152,12 @@
             font-weight: $font-weight-regular;
             text-decoration: underline;
             color: $color-white;
+            transition: all 0.2s ease;
+            
+            &:hover {
+                color: $color-yellow-light;
+                opacity: 1;
+            }
         }
 
         #{$self}__contacts-mail-text {
