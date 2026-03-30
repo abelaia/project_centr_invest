@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+
 const props = defineProps({
     placeholder: {
         type: String,
@@ -11,7 +12,7 @@ const props = defineProps({
     },
     iconAlt: {
         type: String,
-        default: 'submit',
+        default: 'search',
     },
     type: {
         type: String,
@@ -19,11 +20,17 @@ const props = defineProps({
     },
 });
 
-const emit = defineEmits(['submit']);
+const emit = defineEmits(['search']);
 const searchValue = ref('');
 
-const handleSubmit = () => {
-    emit('submit', searchValue.value);
+const handleSearch = () => {
+    emit('search', searchValue.value);
+};
+
+const handleKeyup = (e) => {
+    if (e.key === 'Enter') {
+        handleSearch();
+    }
 };
 
 defineExpose({ props });
@@ -34,16 +41,16 @@ defineExpose({ props });
         class="input-button"
     >
         <input
-            v-model="inputValue"
+            v-model="searchValue"
             :type="type"
             :placeholder="placeholder"
             class="input-button__field"
-            @keyup.enter="handleSubmit"
+            @keyup.enter="handleKeyup"
         >
         <button
             type="button"
             class="input-button__button"
-            @click="handleSubmit"
+            @click="handleSearch"
         >
             <img
                 :src="icon"

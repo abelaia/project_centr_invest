@@ -13,11 +13,26 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['update:modelValue']);
+
+const searchQuery = ref('');
 const isExpanded = ref(false);
-const displayedManufacturers = computed(() => {
-    if (isExpanded.value) return manufacturers;
-    return manufacturers.slice(0, 4);
+
+const filteredManufacturers = computed(() => {
+    if (!searchQuery.value) return manufacturers;
+    return manufacturers.filter(({ name }) =>
+        name.toLowerCase().includes(searchQuery.value.toLowerCase())
+    );
 });
+
+const displayedManufacturers = computed(() => {
+    if (isExpanded.value) return filteredManufacturers.value;
+    return filteredManufacturers.value.slice(0, 4);
+});
+
+const handleSearch = (value) => {
+    searchQuery.value = value;
+    isExpanded.value = false;
+};
 
 const updateSelected = (selected) => {
     emit('update:modelValue', selected);
@@ -33,9 +48,7 @@ const updateSelected = (selected) => {
             class="manufacturer__btn-input"
             placeholder="Поиск..."
             :icon="require('@/assets/images/search.svg')"
-            buttonAlt="search"
-            variant="search"
-            @submit="handleSearch"
+            @search="handleSearch"
         />
         <div class="manufacturer__list" :class="{ 'manufacturer__list--expanded': isExpanded }">
             <AppCheckbox
@@ -49,7 +62,7 @@ const updateSelected = (selected) => {
             />
         </div>
         <AppHideShowButton
-            class="manufacturer__btn-hide-show"
+            class="manufacturer__button-hide-show"
             v-if="manufacturers.length > 4"
             :expanded="isExpanded"
             @toggle="isExpanded = !isExpanded"
@@ -80,7 +93,7 @@ const updateSelected = (selected) => {
         margin-top: 15px;
     }
 
-    .manufacturer__btn-hide-show {
+    .manufacturer__button-hide-show {
         margin-top: 15px;
     }
 }
