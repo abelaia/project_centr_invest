@@ -21,11 +21,11 @@ const currentPage = ref(1);
 
 const filteredProducts = computed(() => {
     let products = [...store.items];
-    
+        
     if (props.filters) {
-        products = products.filter(p => 
-            p.price >= props.filters.price.min && 
-            p.price <= props.filters.price.max
+        products = products.filter(({price}) => 
+            price >= props.filters.price.min && 
+            price <= props.filters.price.max
         );
         
         if (props.filters.manufacturers?.length) {
@@ -34,12 +34,15 @@ const filteredProducts = computed(() => {
             );
         }
     }
-    
+
     return products.sort((a, b) => {
         switch(store.sortBy) {
-            case 'name': return a.title.localeCompare(b.title);
-            case 'price': return a.price - b.price;
-            default: return 0;
+            case 'name':
+                return a.title.localeCompare(b.title);
+            case 'price':
+                return a.price - b.price;
+            default:
+                return 0;
         }
     });
 });
@@ -84,8 +87,8 @@ watch(() => props.filters, () => {
                 />
             </div>
             <Pagination 
-                class="products-section__pagination"
                 v-if="totalPages > 1"
+                class="products-section__pagination"
                 :currentPage="currentPage"
                 :totalPages="totalPages"
                 @update:currentPage="currentPage = $event"

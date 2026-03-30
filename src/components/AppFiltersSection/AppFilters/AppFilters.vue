@@ -1,16 +1,13 @@
 <script setup>
 import { useFilters } from '@/composables/useFilters';
+import { manufacturers } from '@/constants/manufacturers.js';
 import AppPriceFilter from '@/components/UI/AppPriceFilter/AppPriceFilter.vue';
-import AppManufacturer from '@/components/AppFiltersSection/AppManufacturer/AppManufacturer.vue';
+import AppManufacturer from '@/components/AppFiltersSection/AppFilterGroup/AppFilterGroup.vue';
 import AppButton from '@/components/UI/AppButton/AppButton.vue';
 import AppRoundButton from '@/components/UI/AppRoundButton/AppRoundButton.vue';
 
 const { filters, resetFilters, updatePrice } = useFilters();
 const emit = defineEmits(['apply']);
-
-const applyFilters = () => {
-    emit('apply', filters.value);
-};
 
 const handleReset = () => {
     resetFilters();
@@ -21,27 +18,31 @@ const handleReset = () => {
 <template>
     <div class="filters">
         <h2 class="filters__title">
-            ПОДБОР ПО ПАРАМЕТРАМ
+            Подбор по параметрам
         </h2>
         <div class="filters__price-section">
             <span class="filters__price-label">
                 Цена
                 <span>₸</span>
             </span>
-            <AppPriceFilter 
-                :minPrice="filters.price.min"
-                :maxPrice="filters.price.max"
-                @update:minPrice="updatePrice($event, filters.price.max)"
-                @update:maxPrice="updatePrice(filters.price.min, $event)"
+            <AppPriceFilter
+                :min-price="filters.price.min"
+                :max-price="filters.price.max"
+                @update:min-price="updatePrice($event, filters.price.max)"
+                @update:max-price="updatePrice(filters.price.min, $event)"
             />
         </div>
-        <AppManufacturer v-model="filters.manufacturers" />
+        <AppManufacturer 
+            title="Производитель"
+            :items="manufacturers"
+            v-model="filters.manufacturers"
+        />
         <div class="filters__buttons">
             <AppButton
                 text="Показать"
                 :icon="null"
                 iconPosition="right"
-                @click="applyFilters"
+                @click="$emit('apply', filters.value)"
             />
             <AppRoundButton
                 :icon="require('@/assets/images/delete-basket.svg')"

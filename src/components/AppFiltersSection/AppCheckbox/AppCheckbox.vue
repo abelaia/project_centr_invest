@@ -1,10 +1,8 @@
 <script setup>
-import { computed } from 'vue';
-
-const props = defineProps({
+defineProps({
     modelValue: {
-        type: Array,
-        default: () => [],
+        type: Boolean,
+        default: false,
     },
     value: {
         type: [String, Number],
@@ -20,18 +18,7 @@ const props = defineProps({
     },
 });
 
-const emit = defineEmits(['update:modelValue']);
-
-const isChecked = computed({
-    get: () => props.modelValue.includes(props.value),
-    set: (val) => {
-        if (val) {
-            emit('update:modelValue', [...props.modelValue, props.value]);
-        } else {
-            emit('update:modelValue', props.modelValue.filter(v => v !== props.value));
-        }
-    },
-});
+defineEmits(['update:modelValue']);
 </script>
 
 <template>
@@ -39,7 +26,8 @@ const isChecked = computed({
         <input 
             type="checkbox" 
             class="checkbox__input"
-            v-model="isChecked"
+            :checked="modelValue"
+            @change="$emit('update:modelValue', $event.target.checked)"
         >
         <span class="checkbox__label">
             {{ label }}
