@@ -72,4 +72,16 @@
         gap: 108px;
         margin-top: 50px;
     }
+
+    &__bottom-text {
+        max-width: 910px;
+        margin-top: 70px;
+
+        p {
+            font-size: $font-size-sm;
+            font-weight: $font-weight-regular;
+            text-align: start;
+            color: $color-primary;
+        }
+    }
 }
