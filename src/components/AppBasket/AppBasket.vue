@@ -48,7 +48,6 @@ const store = useProductsStore();
         gap: 15px;
         background: none;
         border: none;
-        cursor: pointer;
     }
 
     &__icon-wrapper {
@@ -60,6 +59,7 @@ const store = useProductsStore();
         width: 40px;
         height: 30px;
         object-fit: contain;
+        cursor: pointer;
     }
 
     &__badge {
@@ -90,14 +90,12 @@ const store = useProductsStore();
         font-size: $font-size-sm;
         font-weight: $font-weight-light;
         color: $color-primary;
-        cursor: default;
     }
 
     &__total {
         font-size: $font-size-sm;
         font-weight: $font-weight-semibold;
         color: $color-black;
-        cursor: default;
     }
 }
 </style>
