@@ -20,6 +20,10 @@ defineProps({
         default: 'medium',
         validator: validateButtonSize,
     },
+    rounded: {
+        type: Boolean,
+        default: false,
+    },
 });
 
 defineEmits(['click']);
@@ -29,7 +33,10 @@ defineEmits(['click']);
     <button
         type="button"
         class="app-button"
-        :class="`app-button--${size}`"
+        :class="[
+        `app-button--${size}`,
+        { 'app-button--rounded': rounded }
+        ]"
         @click="$emit('click')"
     >
         <img
@@ -107,6 +114,19 @@ defineEmits(['click']);
         transform: scale(0.96);
         transition: all 0.05s ease;
         opacity: 1;
+    }
+
+    &--rounded {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        padding: 0;
+        justify-content: center;
+
+        .app-button__icon {
+            width: 18px;
+            height: 18px;
+        }
     }
 }
 </style>

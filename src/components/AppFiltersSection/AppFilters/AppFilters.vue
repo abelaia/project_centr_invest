@@ -2,9 +2,8 @@
 import { useFilters } from '@/composables/useFilters';
 import { manufacturers } from '@/constants/manufacturers.js';
 import AppPriceFilter from '@/components/UI/AppPriceFilter/AppPriceFilter.vue';
-import AppManufacturer from '@/components/AppFiltersSection/AppFilterGroup/AppFilterGroup.vue';
+import AppFilterGroup from '@/components/AppFiltersSection/AppFilterGroup/AppFilterGroup.vue';
 import AppButton from '@/components/UI/AppButton/AppButton.vue';
-import AppRoundButton from '@/components/UI/AppRoundButton/AppRoundButton.vue';
 
 const { filters, resetFilters, updatePrice } = useFilters();
 const emit = defineEmits(['apply']);
@@ -32,10 +31,10 @@ const handleReset = () => {
                 @update:max-price="updatePrice(filters.price.min, $event)"
             />
         </div>
-        <AppManufacturer 
+        <AppFilterGroup 
+            v-model="filters.manufacturers"
             title="Производитель"
             :items="manufacturers"
-            v-model="filters.manufacturers"
         />
         <div class="filters__buttons">
             <AppButton
@@ -44,9 +43,10 @@ const handleReset = () => {
                 iconPosition="right"
                 @click="$emit('apply', filters.value)"
             />
-            <AppRoundButton
+            <AppButton
                 :icon="require('@/assets/images/delete-basket.svg')"
                 size="medium"
+                :rounded="true"
                 @click="handleReset"
             />
         </div>

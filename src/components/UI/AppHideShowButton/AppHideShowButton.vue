@@ -1,30 +1,30 @@
-<script>
-export default {
-    name: 'AppToggleButton',
-    props: {
-        expanded: {
-            type: Boolean,
-            default: false,
-        },
-        showText: {
-            type: String,
-            default: 'Показать все',
-        },
-        hideText: {
-            type: String,
-            default: 'Скрыть',
-        },
-        iconShow: {
-            type: String,
-            default: require('@/assets/images/arrow-down.svg'),
-        },
-        iconHide: {
-            type: String,
-            default: require('@/assets/images/arrow-up.svg'),
-        },
+
+<script setup>
+const props = defineProps({
+    expanded: {
+        type: Boolean,
+        default: false,
     },
-    emits: ['toggle'],
-};
+    showText: {
+        type: String,
+        default: 'Показать все',
+    },
+    hideText: {
+        type: String,
+        default: 'Скрыть',
+    },
+    iconShow: {
+        type: String,
+        default: require('@/assets/images/arrow-down.svg'),
+    },
+    iconHide: {
+        type: String,
+        default: require('@/assets/images/arrow-up.svg'),
+    },
+});
+
+defineExpose({ props });
+defineEmits(['toggle']);
 </script>
 
 <template>

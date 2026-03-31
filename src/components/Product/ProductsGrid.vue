@@ -2,7 +2,7 @@
 import { ref, computed, watch } from 'vue';
 import ProductCard from './ProductCard.vue';
 import { useProductsStore } from '@/stores/productsStore';
-import Pagination from '@/components/UI/Pagination/Pagination.vue';
+import AppPagination from '@/components/UI/AppPagination/AppPagination.vue';
 
 const props = defineProps({
     viewMode: {
@@ -86,7 +86,7 @@ watch(() => props.filters, () => {
                     :viewMode="props.viewMode"
                 />
             </div>
-            <Pagination 
+            <AppPagination 
                 v-if="totalPages > 1"
                 class="products-section__pagination"
                 :currentPage="currentPage"

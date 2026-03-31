@@ -40,7 +40,7 @@ const handleEmailSubmit = (email) => {
                             Подпишись на скидки и акции
                         </span>
                         <AppInput
-                            class="footer__btn-email"
+                            class="footer__button-email"
                             placeholder="Введите ваш E-mail"
                             :icon="require('@/assets/images/arrow-white.svg')"
                             iconAlt="send"
@@ -83,7 +83,7 @@ const handleEmailSubmit = (email) => {
                         Скачать прайс-лист:
                     </h4>
                     <AppButton
-                        class="footer__btn-price"
+                        class="footer__button-price"
                         text="Прайс-лист"
                         :icon="require('@/assets/images/save-icon.svg')"
                         iconPosition="right"

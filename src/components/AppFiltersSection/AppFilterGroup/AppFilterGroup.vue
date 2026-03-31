@@ -48,7 +48,7 @@ const toggleItem = (name, isChecked) => {
     if (isChecked) {
         selectedItems.value.push(name);
     } else {
-        selectedItems.value = selectedItems.value.filter(n => n !== name);
+        selectedItems.value = selectedItems.value.filter(existingItem => existingItem !== name);
     }
     
     emit('update:modelValue', selectedItems.value);
@@ -58,15 +58,18 @@ const toggleItem = (name, isChecked) => {
 <template>
     <div class="filter-group">
         <h3 class="filter-group__title">
-            Производитель
+            {{ title }}
         </h3>
         <AppSearch
             class="filter-group__button-input"
             placeholder="Поиск..."
-            :icon="require('@/assets/images/search.svg')"
             @search="handleSearch"
         />
-        <div class="filter-group__list" :class="{ 'filter-group__list--expanded': isExpanded }">
+        <div :class="[
+            'filter-group__list',
+            { 'filter-group__list--expanded': isExpanded }
+            ]"
+        >
             <AppCheckbox
                 v-for="item in displayedItems" 
                 :key="item.id"
@@ -77,8 +80,8 @@ const toggleItem = (name, isChecked) => {
             />
         </div>
         <AppHideShowButton
-            class="filter-group__button-hide-show"
             v-if="filteredItems.length > 4"
+            class="filter-group__button-hide-show"
             :expanded="isExpanded"
             @toggle="isExpanded = !isExpanded"
         />

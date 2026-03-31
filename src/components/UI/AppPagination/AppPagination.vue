@@ -1,23 +1,22 @@
-<script>
-export default {
-    name: 'AppPagination',
-    props: {
-        currentPage: {
-            type: Number,
-            required: true,
-        },
-        totalPages: {
-            type: Number,
-            required: true,
-        },
+<script setup>
+const props = defineProps({
+    currentPage: {
+        type: Number,
+        required: true,
     },
-};
+    totalPages: {
+        type: Number,
+        required: true,
+    },
+});
+
+defineExpose({ props });
+defineEmits(['update:currentPage']);
 </script>
 
 <template>
     <div class="pagination">
         <button 
-            type="button"
             class="pagination__arrow" 
             :disabled="currentPage === 1"
             @click="$emit('update:currentPage', currentPage - 1)"

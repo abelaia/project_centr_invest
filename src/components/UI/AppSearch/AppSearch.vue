@@ -6,14 +6,6 @@ const props = defineProps({
         type: String,
         default: 'Поиск...',
     },
-    icon: {
-        type: String,
-        required: true,
-    },
-    iconAlt: {
-        type: String,
-        default: 'search',
-    },
     type: {
         type: String,
         default: 'text',
@@ -38,25 +30,25 @@ defineExpose({ props });
 
 <template>
     <div
-        class="input-button"
+        class="search"
     >
         <input
             v-model="searchValue"
             :type="type"
             :placeholder="placeholder"
-            class="input-button__field"
+            class="search__field"
             @keyup.enter="handleKeyup"
         >
         <button
             type="button"
-            class="input-button__button"
+            class="search__button"
             @click="handleSearch"
         >
             <img
-                :src="icon"
-                :alt="buttonAlt"
-                class="input-button__icon"
-            >
+                src="@/assets/images/search.svg"
+                alt="Поиск"
+                class="search__icon"
+            />
         </button>
     </div>
 </template>
@@ -64,7 +56,7 @@ defineExpose({ props });
 <style lang="scss" scoped>
 @import '@/assets/styles/vars.scss';
 
-.input-button {
+.search {
     display: flex;
     align-items: center;
     width: 100%;

@@ -1,18 +1,16 @@
-<script>
-export default {
-    name: 'AppPriceFilter',
-    props: {
-        minPrice: {
-            type: Number,
-            default: 0,
-        },
-        maxPrice: {
-            type: Number,
-            default: 10000,
-        },
+<script setup>
+defineProps({
+    minPrice: {
+        type: Number,
+        default: 0,
     },
-    emits: ['update:minPrice', 'update:maxPrice'],
-};
+    maxPrice: {
+        type: Number,
+        default: 10000,
+    },
+});
+
+defineEmits(['update:minPrice', 'update:maxPrice']);
 </script>
 
 <template>
