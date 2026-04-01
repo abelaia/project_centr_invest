@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import { CATEGORIES } from '@/constants/categories.js';
 import { breadcrumbs } from '@/constants/breadcrumbs.js';
 import { useProductsStore } from '@/stores/productsStore';
+import { useFilters } from '@/composables/useFilters';
 import AppBreadCrumbs from '@/components/UI/AppBreadCrumbs/AppBreadCrumbs.vue';
 import AppSelectButton from '@/components/UI/AppSelectButton/AppSelectButton.vue';
 import AppSwitchButton from '@/components/AppSwitchButton/AppSwitchButton.vue';
@@ -12,10 +13,12 @@ import AppFilters from '@/components/AppFiltersSection/AppFilters/AppFilters.vue
 const store = useProductsStore();
 const viewMode = ref('grid');
 const currentBreadCrumbs = breadcrumbs.cosmetics;
-const currentFilters = ref(null);
+const { appliedFilters } = useFilters();
+const currentPage = ref(1);
 
-const applyFilters = (filters) => {
-    currentFilters.value = filters;
+const applyFilters = (newFilters) => {
+    appliedFilters.value = newFilters;
+    currentPage.value = 1;
 };
 </script>
 
@@ -45,22 +48,12 @@ const applyFilters = (filters) => {
                 </li>
             </ul>
             <div class="main__layout">
-                <AppFilters @apply="applyFilters"/>
+                <AppFilters @apply="applyFilters" />
                 <div class="main__right-content">
                     <ProductsGrid                         
                         :viewMode="viewMode" 
-                        :filters="currentFilters"
+                        :filters="appliedFilters"
                     />
-                    <div class="main__bottom-text">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                            Nullam interdum ut justo, vestibulum sagittis lacus iaculis. 
-                            Quis mattis vulputate feugiat massa vestibulum duis. 
-                            Faucibus consectetur aliquet sed pellentesque consequat 
-                            consectetur congue mauris venenatis. Nunc elit, dignissim 
-                            sed nulla ullamcorper enim, malesuada.
-                        </p>
-                    </div>
                 </div>
             </div>
         </div>

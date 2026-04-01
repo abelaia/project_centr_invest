@@ -93,6 +93,16 @@ watch(() => props.filters, () => {
                 :totalPages="totalPages"
                 @update:currentPage="currentPage = $event"
             />
+            <div class="products-section__bottom-text">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Nullam interdum ut justo, vestibulum sagittis lacus iaculis. 
+                    Quis mattis vulputate feugiat massa vestibulum duis. 
+                    Faucibus consectetur aliquet sed pellentesque consequat 
+                    consectetur congue mauris venenatis. Nunc elit, dignissim 
+                    sed nulla ullamcorper enim, malesuada.
+                </p>
+            </div>
         </template>
     </div>
 </template>
@@ -128,6 +138,18 @@ watch(() => props.filters, () => {
 
     &__pagination {
         margin-top: 50px;
+    }
+
+    &__bottom-text {
+        max-width: 910px;
+        margin-top: 70px;
+
+        p {
+            font-size: $font-size-sm;
+            font-weight: $font-weight-regular;
+            text-align: start;
+            color: $color-primary;
+        }
     }
 }
 </style>

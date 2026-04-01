@@ -5,12 +5,13 @@ import AppPriceFilter from '@/components/UI/AppPriceFilter/AppPriceFilter.vue';
 import AppFilterGroup from '@/components/AppFiltersSection/AppFilterGroup/AppFilterGroup.vue';
 import AppButton from '@/components/UI/AppButton/AppButton.vue';
 
-const { filters, resetFilters, updatePrice } = useFilters();
+const { localFilters, resetFilters, updatePrice } = useFilters();
+
 const emit = defineEmits(['apply']);
 
 const handleReset = () => {
     resetFilters();
-    emit('apply', filters.value);
+    emit('apply', localFilters.value);
 };
 </script>
 
@@ -25,14 +26,14 @@ const handleReset = () => {
                 <span>₸</span>
             </span>
             <AppPriceFilter
-                :min-price="filters.price.min"
-                :max-price="filters.price.max"
-                @update:min-price="updatePrice($event, filters.price.max)"
-                @update:max-price="updatePrice(filters.price.min, $event)"
+                :min-price="localFilters.price.min"
+                :max-price="localFilters.price.max"
+                @update:min-price="updatePrice($event, localFilters.price.max)"
+                @update:max-price="updatePrice(localFilters.price.min, $event)"
             />
         </div>
         <AppFilterGroup 
-            v-model="filters.manufacturers"
+            v-model="localFilters.manufacturers"
             title="Производитель"
             :items="manufacturers"
         />
@@ -41,7 +42,7 @@ const handleReset = () => {
                 text="Показать"
                 :icon="null"
                 iconPosition="right"
-                @click="$emit('apply', filters.value)"
+                @click="$emit('apply', localFilters.value)"
             />
             <AppButton
                 :icon="require('@/assets/images/delete-basket.svg')"

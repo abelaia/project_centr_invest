@@ -3,23 +3,32 @@ import { cloneDeep } from 'lodash-es';
 import { INITIAL_FILTERS } from '@/constants/initialFilters';
 
 export const useFilters = () => {
-    const filters = ref(cloneDeep(INITIAL_FILTERS));
+    const appliedFilters = ref(cloneDeep(INITIAL_FILTERS));
+
+    const localFilters = ref(cloneDeep(INITIAL_FILTERS));
+
+    const applyFilters = () => {
+        appliedFilters.value = cloneDeep(localFilters.value);
+    };
 
     const resetFilters = () => {
-        filters.value = cloneDeep(INITIAL_FILTERS);
+        localFilters.value = cloneDeep(INITIAL_FILTERS);
+        appliedFilters.value = cloneDeep(INITIAL_FILTERS);
     };
 
     const updatePrice = (min, max) => {
-        filters.value.price.min = min;
-        filters.value.price.max = max;
+        localFilters.value.price.min = min;
+        localFilters.value.price.max = max;
     };
 
     const updateManufacturers = (selectedIds) => {
-        filters.value.manufacturers = selectedIds;
+        localFilters.value.manufacturers = selectedIds;
     };
 
     return {
-        filters,
+        appliedFilters,
+        localFilters,
+        applyFilters,
         resetFilters,
         updatePrice,
         updateManufacturers,
