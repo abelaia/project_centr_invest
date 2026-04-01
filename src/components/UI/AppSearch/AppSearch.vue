@@ -1,16 +1,10 @@
 <script setup>
+import { ref } from 'vue';
+
 const props = defineProps({
     placeholder: {
         type: String,
         default: 'Поиск...',
-    },
-    icon: {
-        type: String,
-        required: true,
-    },
-    iconAlt: {
-        type: String,
-        default: 'submit',
     },
     type: {
         type: String,
@@ -18,30 +12,43 @@ const props = defineProps({
     },
 });
 
+const emit = defineEmits(['search']);
+const searchValue = ref('');
+
+const handleSearch = () => {
+    emit('search', searchValue.value);
+};
+
+const handleKeyup = (e) => {
+    if (e.key === 'Enter') {
+        handleSearch();
+    }
+};
+
 defineExpose({ props });
 </script>
 
 <template>
     <div
-        class="input-button"
+        class="search"
     >
         <input
-            v-model="inputValue"
+            v-model="searchValue"
             :type="type"
             :placeholder="placeholder"
-            class="input-button__field"
-            @keyup.enter="handleSubmit"
+            class="search__field"
+            @keyup.enter="handleKeyup"
         >
         <button
             type="button"
-            class="input-button__btn"
-            @click="handleSubmit"
+            class="search__button"
+            @click="handleSearch"
         >
             <img
-                :src="icon"
-                :alt="buttonAlt"
-                class="input-button__icon"
-            >
+                src="@/assets/images/search.svg"
+                alt="Поиск"
+                class="search__icon"
+            />
         </button>
     </div>
 </template>
@@ -49,7 +56,7 @@ defineExpose({ props });
 <style lang="scss" scoped>
 @import '@/assets/styles/vars.scss';
 
-.input-button {
+.search {
     display: flex;
     align-items: center;
     width: 100%;
@@ -61,7 +68,7 @@ defineExpose({ props });
         padding: 0 50px 0 20px;
         font-size: $font-size-xs;
         color: $color-gray-dark;
-        background: $color-white;
+        background: $color-gray-search;
         border: 1px solid $color-gray-light;
         border-radius: 36px;
 
@@ -71,7 +78,7 @@ defineExpose({ props });
         }
     }
 
-    &__btn {
+    &__button {
         position: absolute;
         right: 10px;
         top: 10px;
@@ -84,6 +91,17 @@ defineExpose({ props });
         border: none;
         border-radius: 50%;
         cursor: pointer;
+
+        &:hover {
+            background: $color-yellow-light;
+            opacity: 1;
+        }
+
+        &:active {
+            opacity: 1;
+            transform: scale(0.96);
+            transition: all 0.05s ease;
+        }
     }
 
     &__icon {

@@ -1,23 +1,22 @@
-<script>
-export default {
-    name: 'AppPagination',
-    props: {
-        currentPage: {
-            type: Number,
-            required: true,
-        },
-        totalPages: {
-            type: Number,
-            required: true,
-        },
+<script setup>
+const props = defineProps({
+    currentPage: {
+        type: Number,
+        required: true,
     },
-};
+    totalPages: {
+        type: Number,
+        required: true,
+    },
+});
+
+defineExpose({ props });
+defineEmits(['update:currentPage']);
 </script>
 
 <template>
     <div class="pagination">
         <button 
-            type="button"
             class="pagination__arrow" 
             :disabled="currentPage === 1"
             @click="$emit('update:currentPage', currentPage - 1)"
@@ -31,8 +30,8 @@ export default {
         <button 
             v-for="page in totalPages"  
             :key="page"
-            class="pagination__btn"
-            :class="{ 'pagination__btn--active': currentPage === page }"
+            class="pagination__button"
+            :class="{ 'pagination__button--active': currentPage === page }"
             @click="$emit('update:currentPage', page)"
         >
             {{ page }}
@@ -60,7 +59,7 @@ export default {
     align-items: center;
     gap: 10px;
 
-    &__btn {
+    &__button {
         display: flex;
         align-items: center;
         justify-content: center;

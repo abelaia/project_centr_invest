@@ -1,13 +1,11 @@
 <script setup>
+import { downloadFile } from '@/utils/download.js';
+import { categoriesItems, menuItems } from '@/constants/menu.js';
 import AppButton from '@/components/UI/AppButton/AppButton.vue';
 import AppInput from '@/components/UI/AppInput/AppInput.vue';
-import { categoriesItems, menuItems } from '@/constants/menu.js';
 
 const downloadPriceList = () => {
-    const link = document.createElement('a');
-    link.href = '/price-list.text';
-    link.download = 'price-list.text';
-    link.click();
+    downloadFile('/price-list.text', 'price-list.text');
 };
 
 const handleEmailSubmit = (email) => {
@@ -20,7 +18,10 @@ const handleEmailSubmit = (email) => {
         <div class="footer__container">
             <div class="footer__columns">
                 <div class="footer__column">
-                    <div class="footer__logo">
+                    <a 
+                        href="/"
+                        class="footer__logo"
+                    >
                         <img 
                             src="@/assets/images/sultan.svg"
                             alt="sultan"
@@ -29,7 +30,7 @@ const handleEmailSubmit = (email) => {
                         <span class="footer__logo-text">
                             СУЛТАН
                         </span>
-                    </div>
+                    </a>
                     <p class="footer__description">
                         Компания «Султан» — снабжаем розничные магазины товарами "под ключ"
                         в Кокчетаве и Акмолинской области
@@ -39,7 +40,7 @@ const handleEmailSubmit = (email) => {
                             Подпишись на скидки и акции
                         </span>
                         <AppInput
-                            class="footer__btn-email"
+                            class="footer__button-email"
                             placeholder="Введите ваш E-mail"
                             :icon="require('@/assets/images/arrow-white.svg')"
                             iconAlt="send"
@@ -82,7 +83,7 @@ const handleEmailSubmit = (email) => {
                         Скачать прайс-лист:
                     </h4>
                     <AppButton
-                        class="footer__btn-price"
+                        class="footer__button-price"
                         text="Прайс-лист"
                         :icon="require('@/assets/images/save-icon.svg')"
                         iconPosition="right"

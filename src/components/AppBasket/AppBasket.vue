@@ -48,7 +48,6 @@ const store = useProductsStore();
         gap: 15px;
         background: none;
         border: none;
-        cursor: pointer;
     }
 
     &__icon-wrapper {
@@ -60,6 +59,7 @@ const store = useProductsStore();
         width: 40px;
         height: 30px;
         object-fit: contain;
+        cursor: pointer;
     }
 
     &__badge {

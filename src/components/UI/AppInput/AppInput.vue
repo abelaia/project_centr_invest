@@ -29,7 +29,7 @@ defineExpose({ props });
         >
         <button
             v-if="icon"
-            class="input-button__btn"
+            class="input-button__button"
             @click="handleSubmit"
         >
             <img
@@ -65,7 +65,7 @@ defineExpose({ props });
         }
     }
 
-    &__btn {
+    &__button {
         position: absolute;
         right: 10px;
         top: 10px;
@@ -78,6 +78,17 @@ defineExpose({ props });
         border: none;
         border-radius: 50%;
         cursor: pointer;
+
+        &:hover {
+            background: $color-yellow-light;
+            opacity: 1;
+        }
+
+        &:active {
+            opacity: 1;
+            transform: scale(0.96);
+            transition: all 0.05s ease;
+        }
     }
 
     &__icon {
